@@ -3,7 +3,7 @@ import { MovieCard } from '../movie-card/movie-card.jsx';
 import { MovieView } from '../movie-view/movie-view.jsx';
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([
+  const [movies] = useState([
     {
       id: 1,
       title: 'The Girl Next Door',
