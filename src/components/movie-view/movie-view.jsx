@@ -1,8 +1,8 @@
+//information for movie information displayed once user clicks a movie
 export const MovieView = ({ movie, onBackClick }) => {
   return (
     <div>
       <div>
-        {' '}
         <img src={movie.image} />
       </div>
       <div>

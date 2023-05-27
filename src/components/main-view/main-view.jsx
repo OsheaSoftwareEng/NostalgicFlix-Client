@@ -56,9 +56,10 @@ export const MainView = () => {
         'https://m.media-amazon.com/images/M/MV5BMjZiOTNlMzYtZWYwZS00YWJjLTk5NDgtODkwNjRhMDI0MjhjXkEyXkFqcGdeQXVyMjgyNjk3MzE@._V1_FMjpg_UX800_.jpg'
     }
   ]);
-
+  //creates state changes for selected movies
   const [selectedMovie, setSelectedMovie] = useState(null);
 
+  //statement for movies selected to show movie view details and includes code for when clicking the back button to go to list of movies.
   if (selectedMovie) {
     return (
       <MovieView
@@ -67,11 +68,12 @@ export const MainView = () => {
       />
     );
   }
-
+  //if theres no movies in the array the page will say the list is empty
   if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }
 
+  //return statment for movies in the array being displayed and being clickable from moviecard file
   return (
     <div>
       {movies.map((movie) => (
