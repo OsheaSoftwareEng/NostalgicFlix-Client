@@ -1,16 +1,26 @@
 import { useState, useEffect } from 'react';
 import { MovieCard } from '../movie-card/movie-card.jsx';
 import { MovieView } from '../movie-view/movie-view.jsx';
+import { LoginView } from '../login-view/login-view.jsx';
+import { SignupView } from '../signup-view/signup-view.jsx';
 
 export const MainView = () => {
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+  const storedToken = localStorage.getItem('token');
   const [movies, setMovies] = useState([]);
-
+  const [user, setUser] = useState(storedUser ? storedUser : null);
   //creates state changes for selected movies
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [token, setToken] = useState(storedToken ? storedToken : null);
 
   //
   useEffect(() => {
-    fetch('https://nostalgic-flix.herokuapp.com/movies')
+    if (!token) {
+      return;
+    }
+    fetch('https://nostalgic-flix.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -31,7 +41,23 @@ export const MainView = () => {
         });
         setMovies(moviesFromApi);
       });
-  }, []);
+  }, [token]);
+
+  //this returns a login view making the user have to login in before being able to use the application.
+  if (!user) {
+    return (
+      <>
+        <LoginView
+          onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }}
+        />
+        or
+        <SignupView />
+      </>
+    );
+  }
 
   //statement for movies selected to show movie view details and includes code for when clicking the back button to go to list of movies.
   if (selectedMovie) {
@@ -59,6 +85,15 @@ export const MainView = () => {
           }}
         />
       ))}
+      <button
+        onClick={() => {
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
+        }}
+      >
+        Logout
+      </button>
     </div>
   );
 };
