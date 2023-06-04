@@ -75,8 +75,8 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-      <Button className='mt-1' variant='outline-info' type='submit'>
-        Submit
+      <Button className='mt-1' variant='btn btn-dark' type='submit'>
+        Create new account
       </Button>
     </Form>
   );

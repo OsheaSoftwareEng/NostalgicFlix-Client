@@ -10,12 +10,8 @@ export const MovieCard = ({ movie, onMovieClick }) => {
       <Card.Body>
         <Card.Title>{movie.Title}</Card.Title>
         <Card.Text>{movie.Description}</Card.Text>
-        <Button
-          className='open-button'
-          onClick={() => onMovieClick(movie)}
-          variant='outline-info'
-        >
-          Open
+        <Button onClick={() => onMovieClick(movie)} variant='outline-info'>
+          See More
         </Button>
       </Card.Body>
     </Card>
@@ -25,7 +21,8 @@ export const MovieCard = ({ movie, onMovieClick }) => {
 //PropTypes conditions for return MovieCard statement in main-view.jsx
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired
 };
