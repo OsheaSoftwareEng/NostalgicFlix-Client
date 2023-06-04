@@ -16,7 +16,6 @@ export const MainView = () => {
   //creates state changes for selected movies
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
-
   //
   useEffect(() => {
     if (!token) {
@@ -64,8 +63,6 @@ export const MainView = () => {
     );
   }
 
-  //this returns a login view making the user have to login in before being able to use the application.
-
   return (
     <Row className='justify-content-md-center'>
       {!user ? (
@@ -96,7 +93,8 @@ export const MainView = () => {
             </Col>
           ))}
           <Button
-            variant='danger'
+            className='mt-1 d-grid gap-2 col-7 mx-auto'
+            variant='btn btn-danger'
             onClick={() => {
               setUser(null);
               setToken(null);
@@ -110,31 +108,3 @@ export const MainView = () => {
     </Row>
   );
 };
-
-//statement for movies selected to show movie view details and includes code for when clicking the back button to go to list of movies.
-
-//   if (selectedMovie) {
-//     return (
-//       <MovieView
-//         movie={selectedMovie}
-//         onBackClick={() => setSelectedMovie(null)}
-//       />
-//     );
-//   }
-//   //if theres no movies in the array the page will say the list is empty
-//   if (movies.length === 0) {
-//     return <div>The list is empty!</div>;
-//   }
-
-//   //return statement for movies in the array being displayed and being clickable from MovieCard file
-//   return (
-//     <div>
-//       {movies.map((movie) => (
-//         <MovieCard
-//           key={movie.Title}
-//           movie={movie}
-//           onMovieClick={(newSelectedMovie) => {
-//             setSelectedMovie(newSelectedMovie);
-//           }}
-//         />
-//       ))}
