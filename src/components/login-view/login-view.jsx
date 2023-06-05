@@ -61,7 +61,7 @@ export const LoginView = ({ onLoggedIn }) => {
         />
       </Form.Group>
       <Button
-        className='mt-1 d-grid gap-2 col-12 mx-auto '
+        className='mt-1 d-grid gap-2 col-12 mx-auto'
         variant='outline-info'
         type='submit'
       >
