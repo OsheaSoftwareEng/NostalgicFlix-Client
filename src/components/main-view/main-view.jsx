@@ -72,7 +72,7 @@ export const MainView = () => {
           <SignupView />
         </>
       ) : selectedMovie ? (
-        <Col md={3}>
+        <Col md={5}>
           <MovieView
             movie={selectedMovie}
             onBackClick={() => setSelectedMovie(null)}
