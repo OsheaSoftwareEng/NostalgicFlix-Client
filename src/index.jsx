@@ -9,7 +9,7 @@ const App = () => {
     <>
       <h1 className='heading'>NostalgicFlix</h1>
       <Container>
-        <MainView />;
+        <MainView />
       </Container>
     </>
   );
