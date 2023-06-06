@@ -19,7 +19,7 @@ export const SignupView = () => {
       Birthday: birthday
     };
 
-    fetch('SIGNUP_URL', {
+    fetch('https://nostalgic-flix.herokuapp.com/users', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -75,7 +75,11 @@ export const SignupView = () => {
           required
         />
       </Form.Group>
-      <Button className='mt-1' variant='btn btn-dark' type='submit'>
+      <Button
+        className='mt-1 d-grid gap-2 col-12 mx-auto'
+        variant='outline-info'
+        type='submit'
+      >
         Create new account
       </Button>
     </Form>
