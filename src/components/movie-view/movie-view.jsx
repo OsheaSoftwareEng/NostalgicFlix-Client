@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import './movie-view.scss';
 import { Button } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 
 //information for movie information displayed once user clicks a movie
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movie }) => {
+  // const { movieId: currentMovieId } = useParams();
+  // const movie = movies.find((movie) => movie.id === currentMovieId);
   return (
     <div>
       <div>
@@ -30,9 +33,9 @@ export const MovieView = ({ movie, onBackClick }) => {
           <span>Featured: </span>
           <span>{movie.Featured}</span>
         </div>
-        <Button variant='outline-info mt-1' onClick={onBackClick}>
-          Back
-        </Button>
+        <Link to={`/`}>
+          <Button variant='outline-info mt-1'>Back</Button>
+        </Link>
       </div>
     </div>
   );
@@ -51,6 +54,5 @@ MovieView.propTypes = {
       Name: PropTypes.string.isRequired
     }),
     Featured: PropTypes.string.isRequired
-  }).isRequired,
-  onBackClick: PropTypes.func.isRequired
+  }).isRequired
 };
