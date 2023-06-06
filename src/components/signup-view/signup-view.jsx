@@ -19,7 +19,7 @@ export const SignupView = () => {
       Birthday: birthday
     };
 
-    fetch('SIGNUP_URL', {
+    fetch('https://nostalgic-flix.herokuapp.com/users', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
