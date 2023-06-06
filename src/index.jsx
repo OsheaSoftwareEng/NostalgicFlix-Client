@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view.jsx';
 import Container from 'react-bootstrap/Container';
 import './index.scss';
+import { NavigationBar } from './components/navigation-bar/navigation-bar.jsx';
 
 //Main component (will eventually use all the others)
 const App = () => {
