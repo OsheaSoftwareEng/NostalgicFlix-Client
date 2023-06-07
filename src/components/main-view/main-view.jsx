@@ -31,7 +31,7 @@ export const MainView = () => {
         console.log(data);
         const moviesFromApi = data.map((movie) => {
           return {
-            _id: movie.id,
+            _id: movie._id,
             Title: movie.Title,
             ImagePath: movie.ImagePath,
             Description: movie.Description,
@@ -107,7 +107,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <Col md={8}>
-                    <MovieView />
+                    <MovieView movieInfo={movies} user={user} token={token} />
                   </Col>
                 )}
               </>
