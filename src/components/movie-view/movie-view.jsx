@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import './movie-view.scss';
 import { Button, Col, Row } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
 //information for movie information displayed once user clicks a movie
 export const MovieView = ({ movieInfo }) => {
@@ -11,22 +12,22 @@ export const MovieView = ({ movieInfo }) => {
     <>
       <Row>
         <Col>
+          <span className='title-style'>{Movie.Title}</span>
+
           <div className='ratio ratio-16x9'>
-            <iframe
-              src='https://www.youtube.com/embed/Ouiy3WUJk-A'
-              title='Youtube video'
-              allowfullscreen
-            >
-              {' '}
-            </iframe>
+            <ReactPlayer
+              url={Movie.MovieEmbed}
+              playing={true}
+              volume={0}
+              controls={true}
+            />
           </div>
-          {/* <img className='w-100 h-100' src={Movie.ImagePath} /> */}
         </Col>
       </Row>
       <Row>
         <Col>
-          <span>Title: </span>
-          <span>{Movie.Title}</span>
+          <span>Release Date: </span>
+          <span>{Movie.ReleaseDate}</span>
         </Col>
       </Row>
       <Row>
@@ -49,6 +50,12 @@ export const MovieView = ({ movieInfo }) => {
       </Row>
       <Row>
         <Col>
+          <span>Actors: </span>
+          <span>{Movie.Actors}</span>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
           <span>Featured: </span>
           <span>{Movie.Featured}</span>
         </Col>
@@ -60,11 +67,11 @@ export const MovieView = ({ movieInfo }) => {
           </Link>
         </Col>
         <Col>
-          <Link target='_blank' to={movieInfo._id}>
+          <a href={Movie.MovieWatch} target='blank'>
             <Button className='watch-button' variant='outline-danger mt-1'>
               Watch Now
             </Button>
-          </Link>
+          </a>
         </Col>
       </Row>
     </>
