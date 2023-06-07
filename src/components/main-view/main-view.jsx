@@ -35,6 +35,11 @@ export const MainView = () => {
             Title: movie.Title,
             ImagePath: movie.ImagePath,
             Description: movie.Description,
+            MovieEmbed: movie.Movie_Embed,
+            Actors: movie.Actors,
+            ReleaseDate: movie.Release_Date,
+            MovieLength: movie.Movie_Length,
+            MovieWatch: movie.Movie_Watch,
             Genre: {
               Name: movie.Genre.Name
             },
@@ -106,7 +111,7 @@ export const MainView = () => {
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
-                  <Col md={8}>
+                  <Col md={7}>
                     <MovieView movieInfo={movies} user={user} token={token} />
                   </Col>
                 )}
