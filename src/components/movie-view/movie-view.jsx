@@ -13,7 +13,6 @@ export const MovieView = ({ movieInfo }) => {
       <Row>
         <Col>
           <span className='title-style'>{Movie.Title}</span>
-
           <div className='ratio ratio-16x9'>
             <ReactPlayer
               url={Movie.MovieEmbed}
