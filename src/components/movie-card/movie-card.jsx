@@ -11,7 +11,7 @@ export const MovieCard = ({ movie }) => {
       <Card.Body>
         <Card.Title>{movie.Title}</Card.Title>
         <Card.Text>{movie.Description}</Card.Text>
-        <Link to={`/movies${movie.Title}`}>
+        <Link to={`/movies/${movie._id}`}>
           <Button variant='outline-info'>See More</Button>
         </Link>
       </Card.Body>
@@ -21,7 +21,7 @@ export const MovieCard = ({ movie }) => {
 
 //PropTypes conditions for return MovieCard statement in main-view.jsx
 MovieCard.propTypes = {
-  movie: PropTypes.shape({
+  movieData: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired
   }).isRequired
