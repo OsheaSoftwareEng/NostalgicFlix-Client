@@ -50,7 +50,12 @@ export const ProfileView = ({ user, token, movie, updatedUser, loggedOut }) => {
       <Row>
         {result.map((movie) => (
           <Col className='mb-4' md={3}>
-            <MovieCard movie={movie} />
+            <MovieCard
+              movie={movie}
+              user={user}
+              updatedUser={updatedUser}
+              token={token}
+            />
           </Col>
         ))}
       </Row>
