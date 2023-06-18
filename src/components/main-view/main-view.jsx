@@ -117,7 +117,6 @@ export const MainView = () => {
                       }}
                       user={user}
                       token={token}
-                      setUser={setUser}
                       movie={movies}
                       updatedUser={updatedUser}
                     />

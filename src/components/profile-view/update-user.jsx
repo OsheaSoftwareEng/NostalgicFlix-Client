@@ -95,7 +95,7 @@ export const UpdateUser = (user, token, updatedUser) => {
       </Button>
       <Link to={`/users`} style={{ textDecoration: 'none' }}>
         <Button
-          className='mt-1 d-grid gap-2 co l-12 mx-auto'
+          className='mt-1 d-grid gap-2 col-12 mx-auto'
           variant='dark'
           type='submit'
         >
