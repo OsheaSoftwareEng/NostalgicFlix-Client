@@ -9,10 +9,9 @@ import Col from 'react-bootstrap/Col';
 
 //code for div that shows movie title and is clickable
 export const MovieCard = ({ movie, user, token, updatedUser }) => {
-  const [isFavorite, setIsFavorite] =
-    useState();
-
-    // user.FavoriteMovies.includes(movie._id)
+  const [isFavorite, setIsFavorite] = useState(
+    user.FavoriteMovies.includes(movie._id)
+  );
 
   const addFavoriteMovie = () => {
     fetch(
