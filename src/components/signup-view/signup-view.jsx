@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import './signup-view.scss';
+import { Link, Navigate } from 'react-router-dom';
 
 export const SignupView = () => {
   const [username, setUsername] = useState('');
@@ -28,7 +29,6 @@ export const SignupView = () => {
     }).then((response) => {
       if (response.ok) {
         alert('Signup successful');
-        window.location.reload();
       } else {
         alert('Signup failed');
       }
@@ -82,6 +82,15 @@ export const SignupView = () => {
       >
         Create new account
       </Button>
+      <Link to={`/`} style={{ textDecoration: 'none' }}>
+        <Button
+          className='mt-1 d-grid gap-2 col-12 mx-auto'
+          variant='dark'
+          type='submit'
+        >
+          Back to login
+        </Button>
+      </Link>
     </Form>
   );
 };
