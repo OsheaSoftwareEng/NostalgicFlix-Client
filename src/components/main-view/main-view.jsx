@@ -9,6 +9,8 @@ import Col from 'react-bootstrap/Col';
 import './main-view.scss';
 import { NavigationBar } from '../navigation-bar/navigation-bar.jsx';
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { ProfileView } from '../profile-view/profile-view.jsx';
+import { UpdateUser } from '../profile-view/update-user.jsx';
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -16,9 +18,13 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(storedUser ? storedUser : null);
   //creates state changes for selected movies
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
-  //
+
+  const updatedUser = (user) => {
+    setUser(user);
+    localStorage.setItem('user', JSON.stringify(user));
+  };
+
   useEffect(() => {
     if (!token) {
       return;
@@ -40,6 +46,7 @@ export const MainView = () => {
             ReleaseDate: movie.Release_Date,
             MovieLength: movie.Movie_Length,
             MovieWatch: movie.Movie_Watch,
+            Rating: movie.Rating,
             Genre: {
               Name: movie.Genre.Name
             },
@@ -55,7 +62,13 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
-      {/* <NavigationBar /> */}
+      <NavigationBar
+        user={user}
+        token={token}
+        setUser={setUser}
+        setToken={setToken}
+      />
+
       <Row className='justify-content-md-center'>
         <Routes>
           <Route
@@ -68,6 +81,49 @@ export const MainView = () => {
                   <Col md={5} className='form-bg-style'>
                     <SignupView />
                   </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path='/users/updateUser'
+            element={
+              <>
+                {user ? (
+                  <Col>
+                    <UpdateUser
+                      user={user}
+                      token={token}
+                      updatedUser={updatedUser}
+                    />
+                  </Col>
+                ) : (
+                  <Navigate to='/login' replace />
+                )}
+              </>
+            }
+          />
+          <Route
+            path='/users'
+            element={
+              <>
+                {user ? (
+                  <Col>
+                    <ProfileView
+                      loggedOut={() => {
+                        setUser(null);
+                        setMovies(null);
+                        localStorage.clear();
+                      }}
+                      user={user}
+                      token={token}
+                      setUser={setUser}
+                      movie={movies}
+                      updatedUser={updatedUser}
+                    />
+                  </Col>
+                ) : (
+                  <Navigate to='/login' replace />
                 )}
               </>
             }
@@ -112,7 +168,12 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <Col md={7}>
-                    <MovieView movieInfo={movies} user={user} token={token} />
+                    <MovieView
+                      movieInfo={movies}
+                      user={user}
+                      token={token}
+                      setUser={setUser}
+                    />
                   </Col>
                 )}
               </>
@@ -130,11 +191,17 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col className='mb-4' key={movie.id} md={3}>
-                        <MovieCard movie={movie} key={movie.id} />
+                      <Col className='mb-4' key={movie._id} md={3}>
+                        <MovieCard
+                          movie={movie}
+                          key={movie._id}
+                          updatedUser={updatedUser}
+                          user={user}
+                          token={token}
+                        />
                       </Col>
                     ))}
-                    <Button
+                    {/* <Button
                       className='mt-1 d-grid gap-2 col-7 mx-auto'
                       variant='btn btn-danger'
                       onClick={() => {
@@ -144,7 +211,7 @@ export const MainView = () => {
                       }}
                     >
                       Logout
-                    </Button>
+                    </Button> */}
                   </>
                 )}
               </>
