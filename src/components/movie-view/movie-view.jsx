@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
+import './movie-view.scss';
+import { Button } from 'react-bootstrap';
 
 //information for movie information displayed once user clicks a movie
 export const MovieView = ({ movie, onBackClick }) => {
   return (
     <div>
       <div>
-        <img src={movie.ImagePath} />
+        <img className='w-100 h-100' src={movie.ImagePath} />
       </div>
       <div>
         <div>
@@ -28,7 +30,9 @@ export const MovieView = ({ movie, onBackClick }) => {
           <span>Featured: </span>
           <span>{movie.Featured}</span>
         </div>
-        <button onClick={onBackClick}>Back</button>
+        <Button variant='outline-info mt-1' onClick={onBackClick}>
+          Back
+        </Button>
       </div>
     </div>
   );
