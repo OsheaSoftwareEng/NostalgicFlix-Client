@@ -71,12 +71,15 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
       .then((response) => {
         if (response.ok) {
           Toast.fire({
-            icon: 'error',
+            icon: 'success',
             title: `${movie.Title} has been removed from your Watchlist'`
           });
           return response.json();
         } else {
-          alert('Failed');
+          Toast.fire({
+            icon: 'error',
+            title: `${Movie.Title} could not be added to your favorites'`
+          });
           return false;
         }
       })
@@ -97,23 +100,23 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
         <Col>
           <div>
             {isFavorite ? (
-              <BsBookmarkHeartFill
+              <AiFillHeart
                 className='full-heart move-heart'
                 color='#ff6b81'
                 size
                 onClick={removeFavoriteMovie}
               />
             ) : (
-              <BsBookmarkHeart
+              <AiOutlineHeart
                 className='outline-heart move-heart'
                 size
                 onClick={addFavoriteMovie}
               />
             )}
-            <Link id='link-style' to={`/movies/${movie._id}`}>
-              <img className='title-poster' src={movie.ImagePath} alt='' />
-            </Link>
           </div>
+          <Link id='link-style' to={`/movies/${movie._id}`}>
+            <img className='title-poster' src={movie.ImagePath} alt='' />
+          </Link>
         </Col>
       </Row>
     </Container>
