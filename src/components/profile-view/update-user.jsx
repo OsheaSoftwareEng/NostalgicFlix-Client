@@ -8,6 +8,7 @@ import { AiFillLock } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { FaBirthdayCake } from 'react-icons/fa';
 import './update-user.scss';
+import Swal from 'sweetalert2';
 
 export const UpdateUser = ({ user, token, updatedUser }) => {
   const [username, setUsername] = useState('');
@@ -17,6 +18,18 @@ export const UpdateUser = ({ user, token, updatedUser }) => {
 
   const handleSubmitUpdate = (event) => {
     event.preventDefault();
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      }
+    });
 
     const data = {
       Username: username,
@@ -37,14 +50,22 @@ export const UpdateUser = ({ user, token, updatedUser }) => {
         if (response.ok) {
           return response.json();
         } else {
-          alert('Something went wrong');
+          Toast.fire({
+            icon: 'error',
+            title: 'failed trying to change settings'
+          });
           return false;
         }
       })
       .then((user) => {
         if (user) {
-          alert('Account updated');
-          window.location.replace('/users');
+          Toast.fire({
+            icon: 'success',
+            title: 'Settings updated'
+          });
+          setTimeout(function () {
+            window.location.replace('/users');
+          }, 2000);
           updatedUser(user);
         }
       })
