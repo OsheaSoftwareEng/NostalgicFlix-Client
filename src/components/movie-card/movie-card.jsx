@@ -1,17 +1,34 @@
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import React from 'react';
+import { Button, Card, Badge, Col, Row } from 'react-bootstrap';
 import './movie-card.scss';
 import { Link } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/ai';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
-import Col from 'react-bootstrap/Col';
+import Badge from 'react-bootstrap/Badge';
+import { Container } from 'react-bootstrap';
+import { BsBookmarkHeart } from 'react-icons/bs';
+import { BsBookmarkHeartFill } from 'react-icons/bs';
+import Swal from 'sweetalert2';
 
 //code for div that shows movie title and is clickable
 export const MovieCard = ({ movie, user, token, updatedUser }) => {
   const [isFavorite, setIsFavorite] = useState(
     user.FavoriteMovies.includes(movie._id)
   );
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    }
+  });
 
   const addFavoriteMovie = () => {
     fetch(
@@ -23,6 +40,10 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
     )
       .then((response) => {
         if (response.ok) {
+          Toast.fire({
+            icon: 'success',
+            title: `${movie.Title} has been added to your Watchlist'`
+          });
           return response.json();
         } else {
           alert('Failed');
@@ -31,7 +52,6 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
       })
       .then((user) => {
         if (user) {
-          alert('successfully added to favorites');
           setIsFavorite(true);
           updatedUser(user);
         }
@@ -50,6 +70,10 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
     )
       .then((response) => {
         if (response.ok) {
+          Toast.fire({
+            icon: 'error',
+            title: `${movie.Title} has been removed from your Watchlist'`
+          });
           return response.json();
         } else {
           alert('Failed');
@@ -58,7 +82,6 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
       })
       .then((user) => {
         if (user) {
-          alert('successfully deleted from favorites');
           setIsFavorite(false);
           updatedUser(user);
         }
@@ -69,34 +92,98 @@ export const MovieCard = ({ movie, user, token, updatedUser }) => {
   };
 
   return (
-    <>
-      <Card className='h-100 card text-bg-dark mb-3'>
-        <Card.Img className='w-100' variant='top' src={movie.ImagePath} />
-        <Card.Body>
-          <Card.Title> {movie.Title}</Card.Title>{' '}
-          <Col>
+    <Container>
+      <Row>
+        <Col>
+          <div>
             {isFavorite ? (
-              <AiFillHeart
-                className='full-heart'
+              <BsBookmarkHeartFill
+                className='full-heart move-heart'
                 color='#ff6b81'
-                size={30}
+                size
                 onClick={removeFavoriteMovie}
               />
             ) : (
-              <AiOutlineHeart
-                className='outline-heart'
-                size={30}
+              <BsBookmarkHeart
+                className='outline-heart move-heart'
+                size
                 onClick={addFavoriteMovie}
               />
             )}
-          </Col>
-          <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant='outline-info'>See More</Button>
-          </Link>
-        </Card.Body>
-      </Card>
-    </>
+            <Link id='link-style' to={`/movies/${movie._id}`}>
+              <img className='title-poster' src={movie.ImagePath} alt='' />
+            </Link>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+    // <>
+    //   <Container id='container-adjust' className='mt-3 h-100 container-adjust'>
+    //     <Card className='h-100 card text-bg-dark'>
+    //       <Link id='link-style' to={`/movies/${movie._id}`}>
+    //         <Card.Img
+    //           id='image-styles'
+    //           className='w-100'
+    //           variant='top'
+    //           src={movie.ImagePath}
+    //         />
+    //       </Link>
+    //       <Card.Body>
+    //         <Container>
+    //           <Row>
+    //             <Col>
+    //               <Badge
+    //                 id='badge-style'
+    //                 className='badge-style rating-styles font-style'
+    //                 bg=''
+    //               >
+    //                 {movie.Rating}
+    //               </Badge>
+    //               <Badge
+    //                 id='badge-style2'
+    //                 className='badge-style rating-styles font-style'
+    //                 bg=''
+    //               >
+    //                 {movie.Genre.Name}
+    //               </Badge>
+
+    //               {isFavorite ? (
+    //                 <BsBookmarkHeartFill
+    //                   className='full-heart move-heart'
+    //                   color='#ff6b81'
+    //                   size
+    //                   onClick={removeFavoriteMovie}
+    //                 />
+    //               ) : (
+    //                 <BsBookmarkHeart
+    //                   className='outline-heart move-heart'
+    //                   color='#ff0000'
+    //                   size
+    //                   onClick={addFavoriteMovie}
+    //                 />
+    //               )}
+    //             </Col>
+    //           </Row>
+    //           <Container>
+    //             <Link id='link-style' to={`/movies/${movie._id}`}>
+    //               <div className='border-t '></div>
+    //               <Card.Title className='font-style' id='movie-title'>
+    //                 {movie.Title}
+    //               </Card.Title>
+    //               <div className='border-b '></div>
+    //             </Link>
+
+    //             <Col>
+    //               <Card.Title className='font-style' id='release-date'>
+    //                 {movie.ReleaseDate}
+    //               </Card.Title>
+    //             </Col>
+    //           </Container>
+    //         </Container>
+    //       </Card.Body>
+    //     </Card>
+    //   </Container>
+    // </>
   );
 };
 
