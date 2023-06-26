@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 import { useEffect, useState } from 'react';
 import { BsBookmarkHeart } from 'react-icons/bs';
 import { BsBookmarkHeartFill } from 'react-icons/bs';
+import Swal from 'sweetalert2';
 
 //information for movie information displayed once user clicks a movie
 export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
@@ -15,15 +16,27 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
     window.scrollTo(0, 0);
   }, []);
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    }
+  });
+
   const similarMovies = movie.filter((m) => m.Genre.Name === m.Genre.Name);
 
   const [Favorite, setFavorite] = useState(
-    user.FavoriteMovies.includes(movie._id)
+    user.FavoriteMovies.includes(Movie._id)
   );
 
   const addFavorite = () => {
     fetch(
-      `https://nostalgic-flix.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
+      `https://nostalgic-flix.herokuapp.com/users/${user.Username}/movies/${Movie._id}`,
       {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` }
@@ -31,9 +44,16 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
     )
       .then((response) => {
         if (response.ok) {
+          Toast.fire({
+            icon: 'success',
+            title: `${Movie.Title} has been added to your Watchlist'`
+          });
           return response.json();
         } else {
-          alert('Failed');
+          Toast.fire({
+            icon: 'error',
+            title: `${Movie.Title} could not be added to your Watchlist'`
+          });
           return false;
         }
       })
@@ -49,7 +69,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
   };
   const removeFavorite = () => {
     fetch(
-      `https://nostalgic-flix.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
+      `https://nostalgic-flix.herokuapp.com/users/${user.Username}/movies/${Movie._id}`,
       {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
@@ -57,9 +77,16 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
     )
       .then((response) => {
         if (response.ok) {
+          Toast.fire({
+            icon: 'success',
+            title: `${Movie.Title} has been removed from your Watchlist'`
+          });
           return response.json();
         } else {
-          alert('Failed');
+          Toast.fire({
+            icon: 'error',
+            title: 'something went wrong'
+          });
           return false;
         }
       })
