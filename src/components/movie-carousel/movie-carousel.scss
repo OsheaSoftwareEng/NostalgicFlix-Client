@@ -1,0 +1,43 @@
+.movie-featured-heading {
+	color: white;
+	border-left:solid 9px #ff4500;
+	padding-left: 8px;
+}
+
+.font-style-bold {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+#featured-size {
+	width: 20%;
+	color: white
+}
+
+.featured-style {
+color: white;
+}
+
+.movie-poster {
+    max-height: 250px;
+	transition: 0.3s;
+  }
+  
+  .movie-poster:hover {
+    transform: scale(1.09);
+  }
+
+  .row-posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+  }
+  
+  .row-posters::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+
+
