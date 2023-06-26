@@ -1,8 +1,100 @@
-.favorite-button {
-	position: relative;
-	right: -200%;
+.font-style {
+	font-family: 'Roboto', sans-serif;
 }
+
+#image-styles {
+	// height: 25em;
+	// height: 400px;
+	// height: 101%;
+	height: auto;
+}
+
+.title-poster {
+	// width: 16em;
+	width: 100%;
+	max-height: auto;
+}
+
+#container-adjust {
+	width: 100%;
+}
+
 
 .outline-heart, .full-heart {
 	cursor: pointer;
+
 }
+
+.move-heart {
+	width: 1.5em;
+	height: auto;
+	position: relative;
+	top:24px;
+	color: white;
+	background-color: rgba(0,0,0,.5);
+}
+
+#badge-style {
+	position: relative;
+	 bottom: 10px;
+	 right:6px;
+	 background-color: #ff4500;
+	
+	
+}
+
+#badge-style2 {
+	position: relative;
+	bottom: 10px;
+	left: 5px;
+	background-color: orangered;
+}
+
+#movie-title {
+	font-size: 1.5em;
+	text-align: center;
+	position: relative;
+	// bottom: 30px;
+	// border-top: 1px solid rgb(41, 137, 169);
+	// border-bottom: 1px solid rgb(41, 137, 169);
+	line-height: 45px;
+}
+
+#link-style {
+	text-decoration: none;
+	color: white;
+}
+
+.border-t {
+	border: 1px solid orangered;
+	width:6.5em;
+	position: relative;
+	left: 20%;
+	bottom: 0px;
+	// left: 5%;
+	// top: 3px;
+}
+
+.border-b {
+	border: 1px solid #ff4500;
+	width: 6.5em;
+	position: relative;
+	left: 60%;
+	bottom: 5px;
+	// left: 60%;
+	// bottom: 5px;
+}
+
+#release-date {
+	font-size: 1.0em;
+}
+
+
+// @media (max-width: 992px) {
+// 	#container-adjust {
+// 		width: 200%;
+// 		padding: 10px;
+// 	}
+// }
+
+
