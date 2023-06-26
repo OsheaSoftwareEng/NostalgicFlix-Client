@@ -2,16 +2,36 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import './signup-view.scss';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { BsFillPersonFill } from 'react-icons/bs';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { AiFillLock } from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
+import { FaBirthdayCake } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
+//state declarations for username,password,email and birthday and setState to store values inputted
 export const SignupView = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
+  //allows users to signup for application
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      }
+    });
 
     const data = {
       Username: username,
@@ -28,69 +48,99 @@ export const SignupView = () => {
       }
     }).then((response) => {
       if (response.ok) {
-        alert('Signup successful');
+        Toast.fire({
+          icon: 'success',
+          title: 'Signup successful please login'
+        });
+        setTimeout(function () {
+          window.location.replace('/login');
+        }, 2000);
       } else {
-        alert('Signup failed');
+        Toast.fire({
+          icon: 'error',
+          title: 'Signup failed'
+        });
       }
     });
   };
 
+  //returns a signup form
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group controlId='formUsername'>
-        <Form.Label className='form-style'>Username:</Form.Label>
-        <Form.Control
-          className='form-style'
-          type='text'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          minLength='3'
-        />
-      </Form.Group>
-      <Form.Group controlId='formPassword'>
-        <Form.Label className='form-style'>Password:</Form.Label>
-        <Form.Control
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </Form.Group>
-      <Form.Group controlId='formEmail'>
-        <Form.Label className='form-style'>Email:</Form.Label>
-        <Form.Control
-          type='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </Form.Group>
-      <Form.Group controlId='formBirthday'>
-        <Form.Label className='form-style'>Birthday:</Form.Label>
-        <Form.Control
-          type='date'
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-          required
-        />
-      </Form.Group>
-      <Button
-        className='mt-1 d-grid gap-2 col-12 mx-auto'
-        variant='outline-info'
-        type='submit'
-      >
-        Create new account
-      </Button>
-      <Link to={`/`} style={{ textDecoration: 'none' }}>
+    <Form id='box-signup' onSubmit={handleSubmit}>
+      <div id='form-signup'>
+        <h2 className='font-style'>Signup</h2>
+        <Form.Group controlId='formUsername'>
+          <Form.Label></Form.Label>
+          <InputGroup>
+            <Form.Control
+              type='text'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              minLength='7'
+              placeholder='Username'
+            />
+            <InputGroup.Text id='input-style-signup'>
+              <BsFillPersonFill size={25} className='user-icon' />
+            </InputGroup.Text>
+          </InputGroup>
+        </Form.Group>
+        <Form.Group controlId='formPassword'>
+          <Form.Label></Form.Label>
+          <InputGroup>
+            <Form.Control
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder='Password'
+            />
+            <InputGroup.Text id='input-style-signup'>
+              <AiFillLock size={25} className='user-icon' />
+            </InputGroup.Text>
+          </InputGroup>
+        </Form.Group>
+        <Form.Group controlId='formEmail'>
+          <Form.Label></Form.Label>
+          <InputGroup>
+            <Form.Control
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder='Email'
+            />
+            <InputGroup.Text id='input-style-signup'>
+              <MdEmail size={25} className='user-icon' />
+            </InputGroup.Text>
+          </InputGroup>
+        </Form.Group>
+        <Form.Group controlId='formBirthday'>
+          <Form.Label></Form.Label>
+          <InputGroup>
+            <Form.Control
+              type='date'
+              value={birthday}
+              onChange={(e) => setBirthday(e.target.value)}
+              required
+              placeholder='Birthday'
+            />
+            <InputGroup.Text id='input-style-signup'>
+              <FaBirthdayCake size={25} className='user-icon' />
+            </InputGroup.Text>
+          </InputGroup>
+        </Form.Group>
         <Button
-          className='mt-1 d-grid gap-2 col-12 mx-auto'
-          variant='dark'
+          className='mt-3 col-10 font-style'
+          variant='btn btn-success'
           type='submit'
         >
-          Back to login
+          Create new account
         </Button>
-      </Link>
+        <Link to={'/login'} className='link-style-signup font-style'>
+          Already a member?
+        </Link>
+      </div>
     </Form>
   );
 };
