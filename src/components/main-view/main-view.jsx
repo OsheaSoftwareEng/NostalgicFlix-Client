@@ -13,6 +13,7 @@ import { Spinner } from '../spinner/spinner.jsx';
 import logo from '../images/logo-png.png';
 import { WatchList } from '../watch-list/watch-list.jsx';
 import { MovieCarousel } from '../movie-carousel/movie-carousel.jsx';
+import { PasswordUpdate } from '../profile-view/password-update/password-update.jsx';
 
 export const MainView = () => {
   //keeps stored information for user with localStorage
@@ -129,6 +130,30 @@ export const MainView = () => {
                         user={user}
                         token={token}
                         updatedUser={updatedUser}
+                      />
+                    </Col>
+                  ) : (
+                    <Navigate to='/login' replace />
+                  )}
+                </>
+              }
+            />
+
+            <Route
+              path='/users/password-update'
+              element={
+                <>
+                  {user ? (
+                    <Col>
+                      <PasswordUpdate
+                        user={user}
+                        token={token}
+                        updatedUser={updatedUser}
+                        loggedOut={() => {
+                          setUser(null);
+                          setMovies(null);
+                          localStorage.clear();
+                        }}
                       />
                     </Col>
                   ) : (
@@ -423,17 +448,19 @@ export const MainView = () => {
               element={
                 <>
                   {user ? (
-                    <Col>
-                      <h2 className='movie-featured-heading mt-2 font-style-bold'>
-                        WatchList Movies
-                      </h2>
-                      <WatchList
-                        user={user}
-                        token={token}
-                        movie={movies}
-                        updatedUser={updatedUser}
-                      />
-                    </Col>
+                    <Row>
+                      <Col>
+                        <h2 className='movie-featured-heading mt-2 font-style-bold'>
+                          WatchList Movies
+                        </h2>
+                        <WatchList
+                          user={user}
+                          token={token}
+                          movie={movies}
+                          updatedUser={updatedUser}
+                        />
+                      </Col>
+                    </Row>
                   ) : (
                     <Navigate to='/login' replace />
                   )}
