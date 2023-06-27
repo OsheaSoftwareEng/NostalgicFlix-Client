@@ -9,21 +9,12 @@
 	font-weight: 500;
 }
 
-#featured-size {
-	width: 20%;
-	color: white
-}
-
-.featured-style {
-color: white;
-}
-
-.movie-poster {
+.movie-carousel {
     max-height: 250px;
 	transition: 0.3s;
   }
   
-  .movie-poster:hover {
+  .movie-carousel:hover {
     transform: scale(1.09);
   }
 
