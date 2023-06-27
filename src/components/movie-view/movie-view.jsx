@@ -1,21 +1,29 @@
 import './movie-view.scss';
-import { Button, Col, Row, Container, Card } from 'react-bootstrap';
+import { Button, Col, Row, Container } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { useEffect, useState } from 'react';
-import { BsBookmarkHeart } from 'react-icons/bs';
-import { BsBookmarkHeartFill } from 'react-icons/bs';
 import Swal from 'sweetalert2';
+import { BsBookmarkPlusFill, BsBookmarkPlus } from 'react-icons/bs';
 
 //information for movie information displayed once user clicks a movie
 export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
+  //gets movie id from database and uses it as the parameters in the url
   const { movieId } = useParams();
+
+  //searches through the list of database if movies and grabs the id to be displayed in the url
   const Movie = movieInfo.find((movie) => movie._id === movieId);
 
+  //searches through the database of movies and filters out movies with the same genre and displays them but not the same movie
+  const similarMovies = (genreName) =>
+    movie.filter((m) => m.Genre.Name == genreName && m._id !== movieId);
+
+  //monitors the DOM and when a movie is clicked it will always scroll to the top if it's not already there.
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  //custom alerts when a users does an action
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -28,12 +36,12 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
     }
   });
 
-  const similarMovies = movie.filter((m) => m.Genre.Name === m.Genre.Name);
-
+  //state that saves favorite movies to users favorite movies array
   const [Favorite, setFavorite] = useState(
     user.FavoriteMovies.includes(Movie._id)
   );
 
+  //add favorite movies function for users to add movies to favorites
   const addFavorite = () => {
     fetch(
       `https://nostalgic-flix.herokuapp.com/users/${user.Username}/movies/${Movie._id}`,
@@ -44,12 +52,14 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
     )
       .then((response) => {
         if (response.ok) {
+          //custom alert when user successfully adds movie to favorites
           Toast.fire({
             icon: 'success',
             title: `${Movie.Title} has been added to your Watchlist'`
           });
           return response.json();
         } else {
+          //custom alert when response fails to add movie to favorites
           Toast.fire({
             icon: 'error',
             title: `${Movie.Title} could not be added to your Watchlist'`
@@ -57,6 +67,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
           return false;
         }
       })
+      //if movie added is successful it saves the movie to favorite state and updates the users favorites list
       .then((user) => {
         if (user) {
           setFavorite(true);
@@ -67,6 +78,8 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
         alert(e);
       });
   };
+
+  //remove favorite movies function for users to remove movies to favorites
   const removeFavorite = () => {
     fetch(
       `https://nostalgic-flix.herokuapp.com/users/${user.Username}/movies/${Movie._id}`,
@@ -77,12 +90,14 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
     )
       .then((response) => {
         if (response.ok) {
+          //custom alert when user removes adds movie to favorites
           Toast.fire({
             icon: 'success',
             title: `${Movie.Title} has been removed from your Watchlist'`
           });
           return response.json();
         } else {
+          //custom alert when response fails to remove movie to favorites
           Toast.fire({
             icon: 'error',
             title: 'something went wrong'
@@ -90,6 +105,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
           return false;
         }
       })
+      //if movie removed is successful it removes the movie from  the favorite movie state and updates the users favorites list
       .then((user) => {
         if (user) {
           setFavorite(false);
@@ -109,15 +125,15 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
             <Col className='col-md-9'>
               <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
               {Favorite ? (
-                <BsBookmarkHeartFill
-                  className='full-heart move-heart-mv'
+                <BsBookmarkPlusFill
+                  className='full-bookmark move-bookmark-mv'
                   color='#ff6b81'
                   size
                   onClick={removeFavorite}
                 />
               ) : (
-                <BsBookmarkHeart
-                  className='outline-heart move-heart-mv'
+                <BsBookmarkPlus
+                  className='outline-bookmark move-bookmark-mv'
                   size
                   onClick={addFavorite}
                 />
@@ -165,27 +181,27 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
             </Row>
             <Row>
               <Col className='mb-2 pb-3'>
-                <span className='movie-description-styles font-style p-3'>
+                <span className='movie-description font-style p-3'>
                   {Movie.Description}
                 </span>
               </Col>
             </Row>
             <div className='border-top'></div>
             <Col className='pt-2 pb-2'>
-              <span className='movie-description-styles font-style-bold p-1'>
+              <span className='movie-styles-name font-style-bold p-1'>
                 Director{' '}
               </span>
-              <span className='movie-description-styles-name font-style-i'>
+              <span className='movie-styles-name font-style-i'>
                 {Movie.Director.Name}
               </span>
             </Col>
             <div className='border-top'></div>
             <Row>
               <Col className='pt-2 pb-2'>
-                <span className='movie-description-styles font-style-bold p-1'>
+                <span className='movie-styles-name font-style-bold p-1'>
                   Writers{' '}
                 </span>
-                <span className='movie-description-styles-name font-style-i'>
+                <span className='movie-styles-name font-style-i'>
                   {Movie.Writers[0]} · {Movie.Writers[1]} {Movie.Writers[2]}
                   {Movie.Writers[3]}
                 </span>
@@ -194,10 +210,10 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
             </Row>
             <Row>
               <Col className='pt-2 pb-2'>
-                <span className='movie-description-styles font-style-bold p-1'>
+                <span className='movie-styles-name font-style-bold p-1'>
                   Stars{' '}
                 </span>
-                <span className='movie-description-styles-name font-style-i'>
+                <span className='movie-styles-name font-style-i'>
                   {Movie.Actors[0]} · {Movie.Actors[1]} · {Movie.Actors[2]}{' '}
                   {Movie.Actors[3]}
                 </span>
@@ -206,10 +222,10 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
             </Row>
             <Row>
               <Col className='pt-2 pb-2'>
-                <span className='movie-description-styles font-style-bold p-1'>
+                <span className='movie-styles-name font-style-bold p-1'>
                   Genres{' '}
                 </span>
-                <span className='movie-description-styles-name font-style-i'>
+                <span className='movie-styles-name font-style-i'>
                   {Movie.Genres[0]} · {Movie.Genres[1]}
                 </span>
               </Col>
@@ -235,7 +251,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
               </Col>
             </Row>
             <div className='row-posters'>
-              {similarMovies.map((movie) => (
+              {similarMovies(Movie.Genre.Name).map((movie) => (
                 <Link
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -243,7 +259,11 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
                   id='link-style'
                   to={`/movies/${movie._id}`}
                 >
-                  <img className='movie-poster' src={movie.ImagePath} alt='' />
+                  <img
+                    className='movie-carousel'
+                    src={movie.ImagePath}
+                    alt=''
+                  />
                 </Link>
               ))}
             </div>

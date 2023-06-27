@@ -2,6 +2,10 @@
 font-family: 'Roboto', sans-serif;
 }
 
+#password-link {
+	color: #89CFF0;
+}
+
 #btn-outline-profile {
 	color: #ff4500;
 	border-color: #ff4500;
@@ -35,8 +39,8 @@ bottom: 7px;
 //box styles for signup form 
 #box-profile-view {
     position: relative;
-    width: 380px;
-    height: 450px;
+    width: 100%;
+    height: 500px;
     border-radius: 8px;
     background: #1c1c1c;
     overflow: hidden;
@@ -48,10 +52,10 @@ bottom: 7px;
 #box-profile-view::before{
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 840px;
     background: linear-gradient(0deg, transparent, 
     #ff4500, #ff4500);
     transform-origin: bottom right;
@@ -61,10 +65,10 @@ bottom: 7px;
 #box-profile-view::after{
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
+    top: -25%;
+    left: -25%;
+    width: 700px;
+    height: 840px;
     background: linear-gradient(0deg, transparent, 
     #ff4500, #ff4500);
     transform-origin: bottom right;
@@ -87,7 +91,7 @@ bottom: 7px;
 	font-size: 2em;
     color: #ff4500;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0,1em;
 
 }

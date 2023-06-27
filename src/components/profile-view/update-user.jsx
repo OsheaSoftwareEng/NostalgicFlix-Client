@@ -38,7 +38,7 @@ export const UpdateUser = ({ user, token, updatedUser }) => {
       Birthday: birthday
     };
 
-    fetch(`https://nostalgicflix-api.onrender.com/users/${user.Username}`, {
+    fetch(`https://nostalgic-flix.herokuapp.com/users/${user.Username}`, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
@@ -82,7 +82,7 @@ export const UpdateUser = ({ user, token, updatedUser }) => {
     >
       <div id='form-update-user'>
         <h2>Update Info</h2>
-        <Form.Group controlId='formUsername'>
+        <Form.Group controlId='formNewPassword'>
           <Form.Label></Form.Label>
           <InputGroup>
             <Form.Control

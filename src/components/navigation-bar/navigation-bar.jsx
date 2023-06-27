@@ -1,16 +1,10 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import './navigation-bar.scss';
-import Form from 'react-bootstrap/Form';
 import navLogo from '../images/logo-nav-png.png';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Badge from 'react-bootstrap/Badge';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const NavigationBar = ({ user, setUser, setToken, movie }) => {
+  //this checks to see if a user is not logged in and doesn't show the navbar
   if (!user) {
     return null;
   }

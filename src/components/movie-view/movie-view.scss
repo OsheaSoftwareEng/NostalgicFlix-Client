@@ -1,137 +1,60 @@
-.player-wrapper {
+
+	//React player css
+	.player-wrapper {
 	position: relative;
 	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
   }
   
-  .react-player {
-	// position: absolute;
-	// top: -1.5em;
-	// left: 0;
-	position: absolute;
-	top: -5%;
-	left: 0;
-	width: auto;
-	height: auto;
-	
-  }
+	.react-player {
+		position: absolute;
+		top: -5%;
+		left: 0;
+		width: auto;
+		height: auto;
+	}
 
 
-  .outline-heart, .full-heart {
+  //users favorites bookmark css
+  .outline-bookmark, .full-bookmark {
 	cursor: pointer;
-
-}
-
-.move-heart-mv {
+	}
+	.move-bookmark-mv {
 	width: 3.5vw;
 	height: auto;
 	position: relative;
 	top:-13px;
 	color: white;
 	background-color: rgba(0,0,0,.5);
-}
+	}
+	
+	#similar-movies {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-  #similar-movies {
-	display: flex;
-	flex-wrap: wrap;
-  }
-
-
-.font-style {
-	font-family: 'Lora', serif;
-}
-
-
-.font-style-bold {
+  	//font style css
+  .font-style-bold {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
-}
+	}
 
-.font-style {
+	.font-style {
 	font-family: 'Roboto', sans-serif;
-}
+	}
 
-.font-style-i {
+	.font-style-i {
 	font-style: italic;
-}
+	}
 
-.movie-description-styles-name {
-	color: black;
-	font-size: 1em;
-}
+	//H2 heading styles
+	.movie-description-heading {
+		color: black;
+		border-left:solid 9px #ff4500;
+		padding-left: 8px;
+	}
 
-#movie-image {
-	position: relative;
-	top: 0px;
-	// height: 300px;
-	width: 100%;
-	height: 100%;
-}
-
-.movie-stats {
-	color: #BDBDBD;
-	font-size: 0.8em;
-	position: relative;
-	bottom: 10px;
-	left: 5px;
-}
-
-.movie-description-heading {
-	color: black;
-	border-left:solid 9px #ff4500;
-	padding-left: 8px;
-}
-
-.movie-description {
-	color: black;
-	font-size: 1.2em;
-}
-
-.movie-description-styles {
-	color: black;
-	font-size: 1em;
-}
-
-#movie-view-section-bottom {
-	background-color: white;
-	height: 100%;
-	width: 130%;
-	position: relative;
-	right:80px;
-}
-
-#movie-description-section-bottom {
-	background: #F5f5f5;
-	width: 100%;
-	position: relative;
-	right: -3px;
-	// height: 100%;
-	// width: 100%;
-}
-
-.watch-button {
-	position: relative;
-	right: 0%;
-}
-
-.title-style {
-	font-size: 4vw;
-}
-
-#btn-outline-nfv {
-	color:#fff;
-	border-color: #ff4500;
-	margin-left: -5px;
-	margin-top: 5px;
-	background-color: #ff4500;
-}
-
-#btn-outline-nfv:hover {
-	background-color: #ff4500;
-	color: white;
-}
-
-
-#movie-view-section-top {
+	//container for top section with gradient background
+	#movie-view-section-top {
 	height: 200%;
 	width: 130%;
 	position: relative;
@@ -139,11 +62,64 @@
 	background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(91, 90, 90) 90.2%);
 }
 
+	//styling for description, director, writers,actors and genres
+	.movie-styles-name {
+	color: black;
+	font-size: 1em;
+	}
 
-@media (max-width: 576px) {
-
+	//white container that holds the bottom movie description 
 	#movie-view-section-bottom {
 		background-color: white;
+		height: 100%;
+		width: 130%;
+		position: relative;
+		right:80px;
+	}
+
+	//grey container that holds content in bottom section 
+	#movie-description-section-bottom {
+		background: #F5f5f5;
+		width: 100%;
+		position: relative;
+		right: -3px;
+	}
+
+	//css for movie case poster
+	#movie-image {
+		position: relative;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+	}
+
+	//css for release date, rating, and movie length
+	.movie-stats {
+		color: #BDBDBD;
+		font-size: 0.8em;
+		position: relative;
+		bottom: 10px;
+		left: 5px;
+	}
+
+
+	//movie description styling
+	.movie-description {
+		color: black;
+		font-size: 1.1em;
+	}
+
+	//movie title style
+	.title-style {
+		font-size: 4vw;
+	}
+
+
+
+	//media queries for all screen size responsiveness
+	@media (max-width: 576px) {
+
+	#movie-view-section-bottom {
 		height: 55%;
 		width: 135%;
 		position: relative;
@@ -166,15 +142,12 @@
 	#movie-image {
 		position: relative;
 		top: 0px;
-		// height: 300px;
 		width: 70%;
 		height: 50%;
 	}
 
 	@media (max-width: 576px) {
-
-#movie-view-section-bottom {
-		background-color: white;
+	#movie-view-section-bottom {
 		height: 55%;
 		width: 135%;
 		position: relative;
@@ -194,18 +167,11 @@
 		right: 35px;
 	}
 
-	#movie-image {
-		position: relative;
-		top: 0px;
-		// height: 300px;
-		width: 70%;
-		height: 50%;
+		#movie-image {
+			position: relative;
+			top: 0px;
+			width: 70%;
+			height: 50%;
+		}
 	}
-
-
-	}
-	
-
-
-
 } 
