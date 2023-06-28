@@ -2,8 +2,10 @@
 font-family: 'Roboto', sans-serif;
 }
 
-#password-link {
-	color: #89CFF0;
+
+#profile-container {
+	width: 100%;
+	height: 100%;
 }
 
 #btn-outline-profile {
@@ -21,11 +23,9 @@ font-family: 'Roboto', sans-serif;
 
 //user settings 
 
-.user-edit {
+.user-edit , .pass-edit {
 	color: white;
-	position: relative;
 	text-align: center;
-	top: 8px;
 	text-decoration: none;
 }
 
