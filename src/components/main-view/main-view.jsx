@@ -5,7 +5,7 @@ import { LoginView } from '../login-view/login-view.jsx';
 import { SignupView } from '../signup-view/signup-view.jsx';
 import './main-view.scss';
 import { NavigationBar } from '../navigation-bar/navigation-bar.jsx';
-import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ProfileView } from '../profile-view/profile-view.jsx';
 import { UpdateUser } from '../profile-view/update-user.jsx';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -33,6 +33,8 @@ export const MainView = () => {
     localStorage.setItem('user', JSON.stringify(user));
   };
 
+  //logic to search movies by genre
+  const adventureSearch = movies.filter((movie) => movie.Genres == 'Adventure');
   const comedySearch = movies.filter((movie) => movie.Genre.Name === 'Comedy');
   const romanceSearch = movies.filter(
     (movie) => movie.Genre.Name === 'Romance'
@@ -45,14 +47,14 @@ export const MainView = () => {
   const thrillerSearch = movies.filter(
     (movie) => movie.Genre.Name === 'Thriller'
   );
-  const adventureSearch = movies.filter((movie) => movie.Genres == 'Adventure');
 
+  //checks to see if user has token if not they it should'nt return main-view
   useEffect(() => {
     if (!token) {
       return;
     }
 
-    //fetch for movies backend API
+    //fetch for movies data from backend API
     fetch('https://nostalgic-flix.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -119,6 +121,93 @@ export const MainView = () => {
                 </>
               }
             />
+
+            <Route
+              path='/login'
+              element={
+                <>
+                  {user ? (
+                    <Navigate to='/' />
+                  ) : (
+                    <Col className='d-flex justify-content-center'>
+                      <LoginView
+                        onLoggedIn={(user, token) => {
+                          setUser(user);
+                          setToken(token);
+                        }}
+                      />
+                    </Col>
+                  )}
+                </>
+              }
+            />
+
+            <Route
+              path='/'
+              element={
+                <>
+                  {!user ? (
+                    <Navigate to='/login' replace />
+                  ) : movies.length === 0 ? (
+                    <Col className='spinner'>
+                      {<Spinner className='spinner-pos' />}
+                    </Col>
+                  ) : (
+                    <>
+                      <Col>
+                        <MovieCarousel movie={movies} user={user} />
+                      </Col>
+                      {movies.map((movie) => (
+                        <Col
+                          xs={6}
+                          sm={4}
+                          md={2}
+                          className='mb-2'
+                          key={movie._id}
+                        >
+                          <MovieCard
+                            movie={movie}
+                            key={movie._id}
+                            updatedUser={updatedUser}
+                            user={user}
+                            token={token}
+                          />
+                        </Col>
+                      ))}
+                    </>
+                  )}
+                </>
+              }
+            />
+
+            <Route
+              path='/users'
+              element={
+                <>
+                  {user ? (
+                    <Col>
+                      <h2 className='movie-featured-heading mt-2 font-style-bold'>
+                        {user.Username}s' profile settings
+                      </h2>
+                      <ProfileView
+                        loggedOut={() => {
+                          setUser(null);
+                          setMovies(null);
+                          localStorage.clear();
+                        }}
+                        user={user}
+                        token={token}
+                        movie={movies}
+                        updatedUser={updatedUser}
+                      />
+                    </Col>
+                  ) : (
+                    <Navigate to='/login' replace />
+                  )}
+                </>
+              }
+            />
+
             <Route
               path='/users/:userName'
               element={
@@ -138,7 +227,6 @@ export const MainView = () => {
                 </>
               }
             />
-
             <Route
               path='/users/password-update'
               element={
@@ -156,6 +244,57 @@ export const MainView = () => {
                         }}
                       />
                     </Col>
+                  ) : (
+                    <Navigate to='/login' replace />
+                  )}
+                </>
+              }
+            />
+
+            <Route
+              path='/movies/:movieId'
+              element={
+                <>
+                  {!user ? (
+                    <Navigate to='/login' replace />
+                  ) : movies.length === 0 ? (
+                    <Col className='spinner'>
+                      {<Spinner className='spinner-pos' />}
+                    </Col>
+                  ) : (
+                    <Col xs={10} sm={9}>
+                      <MovieView
+                        movieInfo={movies}
+                        key={movies._id}
+                        user={user}
+                        token={token}
+                        movie={movies}
+                        updatedUser={updatedUser}
+                      />
+                    </Col>
+                  )}
+                </>
+              }
+            />
+
+            <Route
+              path='/watchList/favorites'
+              element={
+                <>
+                  {user ? (
+                    <Row>
+                      <Col>
+                        <h2 className='movie-featured-heading mt-2 font-style-bold'>
+                          WatchList Movies
+                        </h2>
+                        <WatchList
+                          user={user}
+                          token={token}
+                          movie={movies}
+                          updatedUser={updatedUser}
+                        />
+                      </Col>
+                    </Row>
                   ) : (
                     <Navigate to='/login' replace />
                   )}
@@ -232,7 +371,6 @@ export const MainView = () => {
                 </>
               }
             />
-
             <Route
               path='/movies/Action'
               element={
@@ -428,136 +566,6 @@ export const MainView = () => {
                       </h2>
                       {scifiSearch.map((movie) => (
                         <Col sm={3} className='mb-4' key={movie._id}>
-                          <MovieCard
-                            movie={movie}
-                            key={movie._id}
-                            updatedUser={updatedUser}
-                            user={user}
-                            token={token}
-                          />
-                        </Col>
-                      ))}
-                    </>
-                  )}
-                </>
-              }
-            />
-
-            <Route
-              path='/watchList/favorites'
-              element={
-                <>
-                  {user ? (
-                    <Row>
-                      <Col>
-                        <h2 className='movie-featured-heading mt-2 font-style-bold'>
-                          WatchList Movies
-                        </h2>
-                        <WatchList
-                          user={user}
-                          token={token}
-                          movie={movies}
-                          updatedUser={updatedUser}
-                        />
-                      </Col>
-                    </Row>
-                  ) : (
-                    <Navigate to='/login' replace />
-                  )}
-                </>
-              }
-            />
-            <Route
-              path='/users'
-              element={
-                <>
-                  {user ? (
-                    <Col>
-                      <ProfileView
-                        loggedOut={() => {
-                          setUser(null);
-                          setMovies(null);
-                          localStorage.clear();
-                        }}
-                        user={user}
-                        token={token}
-                        movie={movies}
-                        updatedUser={updatedUser}
-                      />
-                    </Col>
-                  ) : (
-                    <Navigate to='/login' replace />
-                  )}
-                </>
-              }
-            />
-            <Route
-              path='/login'
-              element={
-                <>
-                  {user ? (
-                    <Navigate to='/' />
-                  ) : (
-                    <Col className='d-flex justify-content-center'>
-                      <LoginView
-                        onLoggedIn={(user, token) => {
-                          setUser(user);
-                          setToken(token);
-                        }}
-                      />
-                    </Col>
-                  )}
-                </>
-              }
-            />
-            <Route
-              path='/movies/:movieId'
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to='/login' replace />
-                  ) : movies.length === 0 ? (
-                    <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
-                    </Col>
-                  ) : (
-                    <Col xs={10} sm={9}>
-                      <MovieView
-                        movieInfo={movies}
-                        key={movies._id}
-                        user={user}
-                        token={token}
-                        movie={movies}
-                        updatedUser={updatedUser}
-                      />
-                    </Col>
-                  )}
-                </>
-              }
-            />
-            <Route
-              path='/'
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to='/login' replace />
-                  ) : movies.length === 0 ? (
-                    <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
-                    </Col>
-                  ) : (
-                    <>
-                      <Col>
-                        <MovieCarousel movie={movies} user={user} />
-                      </Col>
-                      {movies.map((movie) => (
-                        <Col
-                          xs={6}
-                          sm={4}
-                          md={2}
-                          className='mb-2'
-                          key={movie._id}
-                        >
                           <MovieCard
                             movie={movie}
                             key={movie._id}
