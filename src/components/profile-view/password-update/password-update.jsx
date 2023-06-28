@@ -34,7 +34,10 @@ export const PasswordUpdate = ({ user, token, updatedUser, loggedOut }) => {
         Birthday: user.Birthday
       };
     } else {
-      alert("Sorry the passwords aren't matching ");
+      Toast.fire({
+        icon: 'error',
+        title: "sorry passwords don't match try again"
+      });
       return;
     }
 
@@ -81,8 +84,8 @@ export const PasswordUpdate = ({ user, token, updatedUser, loggedOut }) => {
       id='box-update-user'
       onSubmit={handleSubmitUpdate}
     >
-      <div id='form-update-user'>
-        <h2>Update Password</h2>
+      <div id='form-update-user' className='mb-2 mt-2'>
+        <h2 className='mb-5'>Update Password</h2>
         <Form.Group controlId='formNewPassword'>
           <InputGroup>
             <Form.Control
@@ -96,7 +99,7 @@ export const PasswordUpdate = ({ user, token, updatedUser, loggedOut }) => {
             </InputGroup.Text>
           </InputGroup>
         </Form.Group>
-        <Form.Group controlId='formControlPassword'>
+        <Form.Group className='mb-3' controlId='formControlPassword'>
           <Form.Label></Form.Label>
           <InputGroup>
             <Form.Control
