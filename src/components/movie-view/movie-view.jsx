@@ -202,7 +202,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
                   Writers{' '}
                 </span>
                 <span className='movie-styles-name font-style-i'>
-                  {Movie.Writers[0]} · {Movie.Writers[1]} {Movie.Writers[2]}
+                  {Movie.Writers[0]} ⋆ {Movie.Writers[1]} ⋆ {Movie.Writers[2]}
                   {Movie.Writers[3]}
                 </span>
               </Col>
@@ -214,7 +214,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
                   Stars{' '}
                 </span>
                 <span className='movie-styles-name font-style-i'>
-                  {Movie.Actors[0]} · {Movie.Actors[1]} · {Movie.Actors[2]}{' '}
+                  {Movie.Actors[0]} · {Movie.Actors[1]} · {Movie.Actors[2]}
                   {Movie.Actors[3]}
                 </span>
               </Col>
@@ -226,7 +226,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
                   Genres{' '}
                 </span>
                 <span className='movie-styles-name font-style-i'>
-                  {Movie.Genres[0]} · {Movie.Genres[1]}
+                  {Movie.Genres[0]} · {Movie.Genres[1]} · {Movie.Genres[2]}
                 </span>
               </Col>
               <div className='border-top pb-3'></div>
