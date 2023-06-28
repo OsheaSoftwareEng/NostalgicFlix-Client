@@ -34,14 +34,15 @@ export const MainView = () => {
   };
 
   //logic to search movies by genre
-  const adventureSearch = movies.filter((movie) => movie.Genres == 'Adventure');
+  const adventureSearch = movies.filter(
+    (movie) => movie.Genre.Name == 'Adventure'
+  );
   const comedySearch = movies.filter((movie) => movie.Genre.Name === 'Comedy');
   const romanceSearch = movies.filter(
     (movie) => movie.Genre.Name === 'Romance'
   );
   const actionSearch = movies.filter((movie) => movie.Genre.Name === 'Action');
   const dramaSearch = movies.filter((movie) => movie.Genre.Name === 'Drama');
-  const crimeSearch = movies.filter((movie) => movie.Genre.Name === 'Crime');
   const scifiSearch = movies.filter((movie) => movie.Genre.Name === 'Sci-Fi');
   const horrorSearch = movies.filter((movie) => movie.Genre.Name === 'Horror');
   const thrillerSearch = movies.filter(
