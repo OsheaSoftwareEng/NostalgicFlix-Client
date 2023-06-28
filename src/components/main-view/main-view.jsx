@@ -34,9 +34,6 @@ export const MainView = () => {
   };
 
   //logic to search movies by genre
-  const adventureSearch = movies.filter(
-    (movie) => movie.Genre.Name == 'Adventure'
-  );
   const comedySearch = movies.filter((movie) => movie.Genre.Name === 'Comedy');
   const romanceSearch = movies.filter(
     (movie) => movie.Genre.Name === 'Romance'
@@ -162,7 +159,7 @@ export const MainView = () => {
                         <Col
                           xs={6}
                           sm={4}
-                          md={2}
+                          md={3}
                           className='mb-2'
                           key={movie._id}
                         >
@@ -496,41 +493,6 @@ export const MainView = () => {
                         Horror Movies
                       </h2>
                       {horrorSearch.map((movie) => (
-                        <Col sm={3} className='mb-4' key={movie._id}>
-                          <MovieCard
-                            movie={movie}
-                            key={movie._id}
-                            updatedUser={updatedUser}
-                            user={user}
-                            token={token}
-                          />
-                        </Col>
-                      ))}
-                    </>
-                  )}
-                </>
-              }
-            />
-
-            <Route
-              path='/movies/Adventure'
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to='/login' replace />
-                  ) : movies.length === 0 ? (
-                    <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
-                    </Col>
-                  ) : (
-                    <>
-                      <Col>
-                        <MovieCarousel movie={movies} />
-                      </Col>
-                      <h2 className='movie-featured-heading mt-2 font-style-bold'>
-                        Adventure Movies
-                      </h2>
-                      {adventureSearch.map((movie) => (
                         <Col sm={3} className='mb-4' key={movie._id}>
                           <MovieCard
                             movie={movie}

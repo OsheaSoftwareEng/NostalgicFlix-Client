@@ -71,9 +71,6 @@ export const NavigationBar = ({ user, setUser, setToken, movie }) => {
                 <NavDropdown.Item href='/movies/Action'>
                   Action
                 </NavDropdown.Item>
-                <NavDropdown.Item href='/movies/Adventure'>
-                  Adventure
-                </NavDropdown.Item>
                 <NavDropdown.Item href='/movies/Horror'>
                   Horror
                 </NavDropdown.Item>
