@@ -3,9 +3,8 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { MovieCard } from '../movie-card/movie-card';
 import { Button, Card } from 'react-bootstrap';
 import './profile-view.scss';
-import { FaUserEdit } from 'react-icons/fa';
+import { FaUserEdit, FaUserLock } from 'react-icons/fa';
 import Swal from 'sweetalert2';
-import { BiSolidLock } from 'react-icons/bi';
 
 export const ProfileView = ({ user, token, movie, updatedUser, loggedOut }) => {
   //filters through the movie collection to find all the users favorites
@@ -48,7 +47,7 @@ export const ProfileView = ({ user, token, movie, updatedUser, loggedOut }) => {
 
   return (
     <>
-      <Container fluid>
+      <Container id='profile-container'>
         <div className='mx-auto' id='box-profile-view'>
           <div id='form-signup'>
             <Card.Title className='font-style' id='settings-heading'>
@@ -60,23 +59,35 @@ export const ProfileView = ({ user, token, movie, updatedUser, loggedOut }) => {
               </Card.Text>
             </Col>
             <Col className='mt-2'>
-              <Card.Text className='font-style'>Email: {user.Email}</Card.Text>
-            </Col>
-            <Col className='mt-2'>
-              <Link to={`/users/password-update`} id='password-link'>
-                <Card.Text className='font-style'>Update Password</Card.Text>
-              </Link>
-            </Col>
-            <Col className='mt-2'>
               <Card.Text className='font-style'>
                 Birthday: {user.Birthday.slice(0, 10)}
               </Card.Text>
+            </Col>
+            <Col className='mt-2'>
+              <Card.Text className='font-style'>Email: {user.Email}</Card.Text>
+            </Col>
+
+            <Col className='mt-2'>
+              <Link
+                to={`/users/password-update`}
+                id='password-link'
+                className='pass-edit'
+              >
+                <FaUserLock size={55} />
+              </Link>
+              <Link
+                to={`/users/password-update`}
+                id='password-link'
+                className='pass-edit'
+              >
+                <Card.Text className='font-style'>Update Password</Card.Text>
+              </Link>
             </Col>
             <Link to={`/users/updateUser`} className='user-edit'>
               <FaUserEdit size={60} />
             </Link>
             <Link to={`/users/updateUser`} className='user-edit'>
-              <span className='edit-user font-style'>Edit</span>
+              <span className='edit-user font-style'>Edit All</span>
             </Link>
             <Button
               className='delete-btn font-style'
