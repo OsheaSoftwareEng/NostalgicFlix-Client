@@ -38,14 +38,11 @@ export const NavigationBar = ({ user, setUser, setToken, movie }) => {
               </Nav.Link>
               <Nav.Link
                 className='nav-text font-style'
-                href='nostalgicflix.com/watchList/favorites'
+                href='/watchList/favorites'
               >
                 WatchList
               </Nav.Link>
-              <Nav.Link
-                className='nav-text font-style'
-                href='nostalgicflix.com/users'
-              >
+              <Nav.Link className='nav-text font-style' href='/users'>
                 Profile
               </Nav.Link>
               <Nav.Link
@@ -64,25 +61,23 @@ export const NavigationBar = ({ user, setUser, setToken, movie }) => {
                 title='Browse Movies by Genre'
                 menuVariant='dark'
               >
-                <NavDropdown.Item href='nostalgicflix.com/movies/Comedy'>
+                <NavDropdown.Item href='/movies/Comedy'>
                   Comedy
                 </NavDropdown.Item>
-                <NavDropdown.Item href='nostalgicflix.com/movies/Romance'>
+                <NavDropdown.Item href='/movies/Romance'>
                   Romance
                 </NavDropdown.Item>
-                <NavDropdown.Item href='nostalgicflix.com/movies/Drama'>
-                  Drama
-                </NavDropdown.Item>
+                <NavDropdown.Item href='/movies/Drama'>Drama</NavDropdown.Item>
                 <NavDropdown.Item href='/movies/Action'>
                   Action
                 </NavDropdown.Item>
-                <NavDropdown.Item href='nostalgicflix.com/movies/Horror'>
+                <NavDropdown.Item href='/movies/Horror'>
                   Horror
                 </NavDropdown.Item>
-                <NavDropdown.Item href='nostalgicflix.com/movies/Sci-Fi'>
+                <NavDropdown.Item href='/movies/Sci-Fi'>
                   Sci-Fi
                 </NavDropdown.Item>
-                <NavDropdown.Item href='nostalgicflix.com/movies/Thriller'>
+                <NavDropdown.Item href='/movies/Thriller'>
                   Thriller
                 </NavDropdown.Item>
               </NavDropdown>
