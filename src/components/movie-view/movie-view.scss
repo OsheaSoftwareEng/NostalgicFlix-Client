@@ -3,6 +3,8 @@
 	.player-wrapper {
 	position: relative;
 	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+	width: 100%;
+	height: 100%;
   }
   
 	.react-player {
@@ -117,6 +119,16 @@
 
 
 	//media queries for all screen size responsiveness
+	@media (max-width: 1669px) {
+		#movie-image {
+			position: relative;
+			top: 25px;
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+
 	@media (max-width: 576px) {
 
 	#movie-view-section-bottom {
@@ -146,6 +158,7 @@
 		height: 50%;
 	}
 
+
 	@media (max-width: 576px) {
 	#movie-view-section-bottom {
 		height: 55%;
@@ -169,9 +182,135 @@
 
 		#movie-image {
 			position: relative;
-			top: 0px;
-			width: 70%;
+			top: -9px;
+			width: 60%;
+			height: auto;
+		}
+
+		.react-player {
+			position: absolute;
+			top: -16%;
+			left: -22%;
+		}
+
+		.player-wrapper {
+			width: 139%;
+			height: 100%;
+		}
+	}
+
+	@media (max-width: 476px) {
+
+		.player-wrapper {
+			width: 150%;
+			height: 120%;
+		}
+
+		#movie-image {
+			position: relative;
+			top: -8px;
+			width: 55%;
 			height: 50%;
+		}
+
+		.react-player {
+			position: absolute;
+			top: -34%;
+			left: -22%;
+		}
+
+		@media (max-width: 476px) {
+
+		.player-wrapper {
+			width: 157%;
+			height: 120%;
+		}
+
+		#movie-image {
+			position: relative;
+			top: -8px;
+			width: 55%;
+			height: 50%;
+		}
+
+		.react-player {
+			position: absolute;
+			top: -34%;
+			left: -20%;
+		}
+
+		.movie-stats {
+			position: relative;
+			left: -6px;
+			bottom: 23px;
+		}
+
+
+		@media (max-width: 373px) {
+
+			.movie-stats {
+				position: relative;
+				left: -6px;
+				bottom: -23px;
+			}
+		}
+
+		@media (max-width: 320px) {
+
+			#movie-image {
+				position: relative;
+				top: -8px;
+				width: 55%;
+				height: 50%;
+			}
+	
+			.react-player {
+				position: absolute;
+				top: -47%;
+				left: -15%;
+			}
+	
+			.movie-stats {
+				position: relative;
+				left: -6px;
+				bottom: 19px;
+			}
+
+			.player-wrapper {
+				width: 165%;
+				height: 120%;
+			}
+
+
+
+			@media (max-width: 310px) {
+
+			#movie-image {
+				position: relative;
+				top: -13px;
+				right: 8px;
+				width: 55%;
+				height: 50%;
+			}
+	
+			.react-player {
+				position: absolute;
+				top: -47%;
+				left: -20%;
+			}
+	
+			.movie-stats {
+				position: relative;
+				left: -6px;
+				bottom: 25px;
+			}
+
+			.player-wrapper {
+				width: 165%;
+				height: 120%;
+			}
+			}
+		}
 		}
 	}
 } 
