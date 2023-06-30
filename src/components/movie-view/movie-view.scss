@@ -222,7 +222,7 @@
 		@media (max-width: 476px) {
 
 		.player-wrapper {
-			width: 157%;
+			width: 160%;
 			height: 120%;
 		}
 
@@ -236,22 +236,43 @@
 		.react-player {
 			position: absolute;
 			top: -34%;
-			left: -20%;
+			left: -23%;
 		}
 
 		.movie-stats {
 			position: relative;
 			left: -6px;
-			bottom: 23px;
+			bottom: 26px;
+			font-size: 0.6em;
 		}
 
+		.move-bookmark-mv {
+			width: 3.5vw;
+			height: auto;
+			position: relative;
+			top:-16px;
+			color: white;
+			background-color: rgba(0,0,0,.5);
+			}
 
-		@media (max-width: 373px) {
+
+		@media (max-width: 375px) {
 
 			.movie-stats {
 				position: relative;
 				left: -6px;
-				bottom: -23px;
+				bottom: 28px;
+			}
+
+			.react-player {
+				position: absolute;
+				top: -36%;
+				left: -21%;
+			}
+
+			.player-wrapper {
+				width: 160%;
+				height: 120%;
 			}
 		}
 
@@ -266,8 +287,8 @@
 	
 			.react-player {
 				position: absolute;
-				top: -47%;
-				left: -15%;
+				top: -40%;
+				left: -18%;
 			}
 	
 			.movie-stats {
