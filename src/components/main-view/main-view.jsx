@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ProfileView } from '../profile-view/profile-view.jsx';
 import { UpdateUser } from '../profile-view/update-user.jsx';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Spinner } from '../spinner/spinner.jsx';
+import { LoadingSpinner } from '../spinner/spinner.jsx';
 import logo from '../images/logo-png.png';
 import { WatchList } from '../watch-list/watch-list.jsx';
 import { MovieCarousel } from '../movie-carousel/movie-carousel.jsx';
@@ -164,7 +164,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -273,7 +273,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <Col xs={10} sm={9}>
@@ -324,7 +324,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -359,7 +359,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -393,7 +393,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -428,7 +428,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -463,7 +463,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -498,7 +498,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
@@ -533,7 +533,7 @@ export const MainView = () => {
                     <Navigate to='/login' replace />
                   ) : movies.length === 0 ? (
                     <Col className='spinner'>
-                      {<Spinner className='spinner-pos' />}
+                      {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
                     <>
