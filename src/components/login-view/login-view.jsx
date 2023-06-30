@@ -110,8 +110,18 @@ export const LoginView = ({ onLoggedIn }) => {
               Log In
             </Button>
             <Row>
-              <Col className='mt-2'>
-                <span className='font-style'>Not a member?</span>{' '}
+              <Col>
+                <Link
+                  to={'/forgot-password'}
+                  className='link-style-signup font-style forgot-pass'
+                >
+                  Forgot Password?
+                </Link>
+              </Col>
+            </Row>
+            <Row>
+              <Col className='mt-3'>
+                <span className='font-style '>Not a member?</span>{' '}
                 <Link to={'/signup'} className='link-style-login font-style'>
                   Signup
                 </Link>
