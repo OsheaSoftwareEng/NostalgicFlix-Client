@@ -3,13 +3,5 @@ $body-bg: Black;
 $body-color: white;
 
 
-.heading {
-	text-align: center;
-	font-size: 85px;
-	padding: 15px;
-	background: -webkit-linear-gradient(0deg, #232323 0%, hwb(201 19% 3%) 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
 
 @import '~bootstrap/scss/bootstrap.scss';

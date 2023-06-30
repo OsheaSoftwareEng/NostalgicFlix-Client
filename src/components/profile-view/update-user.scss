@@ -1,49 +1,43 @@
-.font-style {
-	font-family: 'Roboto', sans-serif;
-}
 
-.forgot-pass {
-	position: relative;
-	left: 6.2em;
-	top: 3px;
-}
+//Update user form styles
 
-
-.link-style-login {
+.link-style-update-user {
 	text-decoration: none;
 	color: #ff4500;
-	font-size: 00.95em;
+	font-size: 00.75em;
+	margin-top: 10px;
 }
 
 
 
-#input-style-login {
+#input-style-update-user {
 	background-color: black;
 }
 
-#btn-login-nf {
+#btn-signup-nf {
 	color:#ff4500;
 	border-color:#ff4500;
 }
 
-#btn-login-nf:hover {
+#btn-signup-nf:hover {
 	background-color: #ff4500;
 	color: white;
 }
 
-//login form styles 
-#box-login {
+//box styles for user update form 
+#box-update-user {
     position: relative;
     width: 380px;
-    height: 420px;
+    height: 450px;
     border-radius: 8px;
     background: #1c1c1c;
     overflow: hidden;
 	text-align: center;
-	
+	top: 10em;
 }
 
-#box-login::before{
+//box animation css
+#box-update-user::before{
     content: '';
     position: absolute;
     top: -50%;
@@ -56,7 +50,7 @@
     animation: animate 6s linear infinite;
 }
 
-#box-login::after{
+#box-update-user::after{
     content: '';
     position: absolute;
     top: -50%;
@@ -79,7 +73,8 @@
     }
 }
 
-#form-login {
+//form inside box css 
+#form-update-user {
     position: absolute;
     inset: 2px;
     border-radius: 8px;
@@ -90,13 +85,11 @@
     flex-direction: column;
 	align-items: center;
 	
-
 }
-#form-login h2 {
+#form-update-user h2 {
     color: #ff4500;
     font-weight: 500;
     text-align: center;
     letter-spacing: 0,1em;
 
 }
-

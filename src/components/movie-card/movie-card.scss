@@ -1,0 +1,35 @@
+.font-style {
+	font-family: 'Roboto', sans-serif;
+}
+
+//main view movie case size settings 
+.movie-poster {
+	width: 100%;
+	max-height: auto;
+}
+
+.outline-bookmark, .full-bookmark {
+	cursor: pointer;
+
+}
+
+//watchlist bookmark position/style css
+.move-bookmark {
+	width: 1.4em;
+	height: auto;
+	position: relative;
+	top:23px;
+	right: 2px;
+	color: white;
+	background-color: rgba(0,0,0,.1);
+}
+
+
+
+
+
+
+
+
+
+

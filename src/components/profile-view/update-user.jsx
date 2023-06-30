@@ -1,24 +1,22 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import './signup-view.scss';
 import { Link } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillLock } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { FaBirthdayCake } from 'react-icons/fa';
+import './update-user.scss';
 import Swal from 'sweetalert2';
 
-//state declarations for username,password,email and birthday and setState to store values inputted
-export const SignupView = () => {
+export const UpdateUser = ({ user, token, updatedUser }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  //allows users to signup for application
-  const handleSubmit = (event) => {
+  const handleSubmitUpdate = (event) => {
     event.preventDefault();
 
     const Toast = Swal.mixin({
@@ -40,47 +38,61 @@ export const SignupView = () => {
       Birthday: birthday
     };
 
-    fetch('https://nostalgic-flix.herokuapp.com/users', {
-      method: 'POST',
+    fetch(`https://nostalgic-flix.herokuapp.com/users/${user.Username}`, {
+      method: 'PUT',
       body: JSON.stringify(data),
       headers: {
+        Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
-    }).then((response) => {
-      if (response.ok) {
-        Toast.fire({
-          icon: 'success',
-          title: 'Signup successful please login'
-        });
-        setTimeout(function () {
-          window.location.replace('/login');
-        }, 2000);
-      } else {
-        Toast.fire({
-          icon: 'error',
-          title: 'Signup failed'
-        });
-      }
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          Toast.fire({
+            icon: 'error',
+            title: 'failed trying to change settings'
+          });
+          return false;
+        }
+      })
+      .then((user) => {
+        if (user) {
+          Toast.fire({
+            icon: 'success',
+            title: 'Settings updated'
+          });
+          setTimeout(function () {
+            window.location.replace('/users');
+          }, 2000);
+          updatedUser(user);
+        }
+      })
+      .catch((e) => {
+        alert(e);
+      });
   };
 
-  //returns a signup form
   return (
-    <Form id='box-signup' onSubmit={handleSubmit}>
-      <div id='form-signup'>
-        <h2 className='font-style'>Signup</h2>
-        <Form.Group controlId='formUsername'>
+    <Form
+      className='mx-auto'
+      id='box-update-user'
+      onSubmit={handleSubmitUpdate}
+    >
+      <div id='form-update-user'>
+        <h2>Update Info</h2>
+        <Form.Group controlId='formNewPassword'>
           <Form.Label></Form.Label>
           <InputGroup>
             <Form.Control
               type='text'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              required
               minLength='7'
               placeholder='Username'
             />
-            <InputGroup.Text id='input-style-signup'>
+            <InputGroup.Text id='input-style-update-user'>
               <BsFillPersonFill size={25} className='user-icon' />
             </InputGroup.Text>
           </InputGroup>
@@ -92,10 +104,9 @@ export const SignupView = () => {
               type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
               placeholder='Password'
             />
-            <InputGroup.Text id='input-style-signup'>
+            <InputGroup.Text id='input-style-update-user'>
               <AiFillLock size={25} className='user-icon' />
             </InputGroup.Text>
           </InputGroup>
@@ -107,10 +118,9 @@ export const SignupView = () => {
               type='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
               placeholder='Email'
             />
-            <InputGroup.Text id='input-style-signup'>
+            <InputGroup.Text id='input-style-update-user'>
               <MdEmail size={25} className='user-icon' />
             </InputGroup.Text>
           </InputGroup>
@@ -122,23 +132,18 @@ export const SignupView = () => {
               type='date'
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
-              required
               placeholder='Birthday'
             />
-            <InputGroup.Text id='input-style-signup'>
+            <InputGroup.Text id='input-style-update-user'>
               <FaBirthdayCake size={25} className='user-icon' />
             </InputGroup.Text>
           </InputGroup>
         </Form.Group>
-        <Button
-          className='mt-3 col-10 font-style'
-          variant='btn btn-success'
-          type='submit'
-        >
-          Create new account
+        <Button className='mt-4 col-9' variant='btn btn-success' type='submit'>
+          Save
         </Button>
-        <Link to={'/login'} className='link-style-signup font-style'>
-          Already a member?
+        <Link to={'/users'} className='link-style-update-user'>
+          Back to Profile
         </Link>
       </div>
     </Form>

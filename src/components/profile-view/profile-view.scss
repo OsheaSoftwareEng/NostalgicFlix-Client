@@ -1,0 +1,104 @@
+.font-style{
+font-family: 'Roboto', sans-serif;
+}
+
+
+#profile-container {
+	width: 100%;
+	height: 100%;
+}
+
+#btn-outline-profile {
+	color: #ff4500;
+	border-color: #ff4500;
+	margin-left: -5px;
+	margin-top: 5px;
+	background-color: black;
+}
+
+#btn-outline-profile:hover {
+	background-color: #ff4500;
+	color: white;
+}
+
+//user settings 
+
+.user-edit , .pass-edit {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+.edit-user {
+position: relative;
+right: 8px;
+bottom: 7px;
+}
+
+
+//box styles for signup form 
+#box-profile-view {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    background: #1c1c1c;
+    overflow: hidden;
+	text-align: center;
+	top: 10em;
+}
+
+//box animation css
+#box-profile-view::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 840px;
+    background: linear-gradient(0deg, transparent, 
+    #ff4500, #ff4500);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+#box-profile-view::after{
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    width: 700px;
+    height: 840px;
+    background: linear-gradient(0deg, transparent, 
+    #ff4500, #ff4500);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#settings-heading  {
+	position: relative;
+	bottom: 10px;
+	font-size: 2em;
+    color: #ff4500;
+    font-weight: 500;
+    text-align: left;
+    letter-spacing: 0,1em;
+
+}
+
+.delete-btn {
+	position: relative;
+	top: 30px;
+	text-align: center;
+}
+  
