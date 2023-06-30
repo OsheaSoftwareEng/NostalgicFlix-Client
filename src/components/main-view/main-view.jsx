@@ -14,6 +14,7 @@ import logo from '../images/logo-png.png';
 import { WatchList } from '../watch-list/watch-list.jsx';
 import { MovieCarousel } from '../movie-carousel/movie-carousel.jsx';
 import { PasswordUpdate } from '../profile-view/password-update/password-update.jsx';
+import { ForgotPassword } from '../forgot-password/forgot-password.jsx';
 
 export const MainView = () => {
   //keeps stored information for user with localStorage
@@ -135,6 +136,21 @@ export const MainView = () => {
                         }}
                       />
                     </Col>
+                  )}
+                </>
+              }
+            />
+
+            <Route
+              path='/forgot-password'
+              element={
+                <>
+                  {user ? (
+                    <Navigate to='/' />
+                  ) : (
+                    <span>
+                      <ForgotPassword user={user} />
+                    </span>
                   )}
                 </>
               }
