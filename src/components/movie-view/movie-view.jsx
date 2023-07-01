@@ -159,7 +159,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
                   className='react-player'
                   url={Movie.MovieEmbed}
                   playing={true}
-                  volume={0}
+                  volume={null}
                   controls={true}
                   width='100%'
                   height='100%'
