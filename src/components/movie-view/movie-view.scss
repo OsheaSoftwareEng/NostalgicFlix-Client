@@ -56,13 +56,13 @@
 	}
 
 	//container for top section with gradient background
-	#movie-view-section-top {
-	height: 200%;
-	width: 130%;
-	position: relative;
-	right:80px;
-	background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(91, 90, 90) 90.2%);
-}
+		#movie-view-section-top {
+		height: 200%;
+		width: 130%;
+		position: relative;
+		right:80px;
+		background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(91, 90, 90) 90.2%);
+	}
 
 	//styling for description, director, writers,actors and genres
 	.movie-styles-name {
@@ -255,30 +255,105 @@
 			background-color: rgba(0,0,0,.5);
 			}
 
+			@media (max-width: 476px) {
+				#movie-image {
+					display: none;
+					position: relative;
+					top: -8px;
+					width: 55%;
+					height: 50%;
+				}
+	
+				.movie-stats {
+					position: relative;
+					left: 220px;
+					bottom: 65px;
+					font-size: 0.5em;
+				}
+	
+				.react-player {
+					position: absolute;
+					top: -55%;
+					left: -44%;
+				}
+	
+				.player-wrapper {
+					width: 235%;
+					height: 165%;
+				}
+	
+	
+				.move-bookmark-mv {
+					width: 3.5vw;
+					height: auto;
+					position: relative;
+					top:-40px;
+					left: 110px;
+					color: white;
+					background-color: rgba(0,0,0,.5);
+					}
+	
+					.title-style {
+						font-size: 13px;
+						position: relative;
+						top: -10px;
+						margin-top: 12px;
+					}
+			}
+	
+
 
 		@media (max-width: 375px) {
 
+			#movie-image {
+				display: none;
+				position: relative;
+				top: -8px;
+				width: 55%;
+				height: 50%;
+			}
+
 			.movie-stats {
 				position: relative;
-				left: -6px;
-				bottom: 28px;
+				left: 220px;
+				bottom: 66px;
+				font-size: 0.5em;
 			}
 
 			.react-player {
 				position: absolute;
-				top: -36%;
-				left: -21%;
+				top: -58%;
+				left: -43%;
 			}
 
 			.player-wrapper {
-				width: 160%;
-				height: 120%;
+				width: 235%;
+				height: 185%;
 			}
+
+
+			.move-bookmark-mv {
+				width: 3.5vw;
+				height: auto;
+				position: relative;
+				top:-41px;
+				left: 35%;
+				color: white;
+				background-color: rgba(0,0,0,.5);
+				}
+
+				.title-style {
+					font-size: 13px;
+					position: relative;
+					top: -11px;
+					margin-top: 12px;
+				}
 		}
 
 		@media (max-width: 320px) {
 
 			#movie-image {
+				display: none;
 				position: relative;
 				top: -8px;
 				width: 55%;
@@ -287,20 +362,49 @@
 	
 			.react-player {
 				position: absolute;
-				top: -40%;
-				left: -18%;
+				top: -66%;
+				left: -43%;
 			}
 	
 			.movie-stats {
 				position: relative;
-				left: -6px;
-				bottom: 19px;
+				left: 180px;
+				bottom: 59px;
+				font-size: 0.5em;
 			}
 
 			.player-wrapper {
-				width: 165%;
-				height: 120%;
+				width: 254%;
+				height: 186%;
 			}
+
+			.move-bookmark-mv {
+				width: 3.5vw;
+				height: auto;
+				position: relative;
+				top:-35px;
+				left: 108px;
+				color: white;
+				background-color: rgba(0,0,0,.5);
+				}
+
+				.title-style {
+					font-size: 4vw;
+					position: relative;
+					top: -4px;
+				}
+
+				#movie-view-section-top {
+					height: 110%;
+					width: 130%;
+					position: relative;
+					right:0px;
+					background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(91, 90, 90) 90.2%);
+				}
+
+				
+
+				
 
 
 
