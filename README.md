@@ -1,6 +1,7 @@
 # NostalgicFlix Movie App
 
 **Link to project:** www.nostalgicflix.com
+**Link to API:** https://github.com/OsheaSoftwareEng/NostalgicFlix-API
 
 ![alt tag](https://imgur.com/qMkMAoB.png) 
 
