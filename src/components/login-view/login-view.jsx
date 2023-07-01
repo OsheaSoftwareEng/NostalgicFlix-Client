@@ -78,7 +78,7 @@ export const LoginView = ({ onLoggedIn }) => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  minLength='3'
+                  minLength='7'
                   placeholder='Username'
                 />
                 <InputGroup.Text id='input-style-login'>
@@ -95,6 +95,7 @@ export const LoginView = ({ onLoggedIn }) => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  minLength='10'
                   placeholder='Password'
                 />
                 <InputGroup.Text id='input-style-login'>

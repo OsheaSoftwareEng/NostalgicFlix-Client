@@ -93,6 +93,7 @@ export const SignupView = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              minLength='10'
               placeholder='Password'
             />
             <InputGroup.Text id='input-style-signup'>
