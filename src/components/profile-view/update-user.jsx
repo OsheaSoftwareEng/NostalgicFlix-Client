@@ -105,6 +105,7 @@ export const UpdateUser = ({ user, token, updatedUser }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder='Password'
+              minLength='10'
             />
             <InputGroup.Text id='input-style-update-user'>
               <AiFillLock size={25} className='user-icon' />

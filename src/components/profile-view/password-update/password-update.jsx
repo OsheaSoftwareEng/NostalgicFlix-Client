@@ -93,6 +93,7 @@ export const PasswordUpdate = ({ user, token, updatedUser, loggedOut }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder='New Password'
+              minLength='10'
             />
             <InputGroup.Text id='input-style-update-user'>
               <AiFillLock size={25} className='user-icon' />
@@ -107,6 +108,7 @@ export const PasswordUpdate = ({ user, token, updatedUser, loggedOut }) => {
               value={controlPassword}
               onChange={(e) => setControlPassword(e.target.value)}
               placeholder=' Confirm Password'
+              minLength='10'
             />
             <InputGroup.Text id='input-style-update-user'>
               <AiFillLock size={25} className='user-icon' />
