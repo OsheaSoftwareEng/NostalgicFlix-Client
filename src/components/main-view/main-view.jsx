@@ -91,12 +91,15 @@ export const MainView = () => {
   return (
     <BrowserRouter>
       {!user ? (
-        <Col className='d-flex justify-content-center'>
-          <img id='logo' src={logo} alt='' />
-        </Col>
+        <Container>
+          <Col className='d-flex justify-content-center'>
+            <img id='logo' src={logo} alt='Nostalgicflix logo' />
+          </Col>
+        </Container>
       ) : (
         <NavigationBar
           user={user}
+          t
           token={token}
           setUser={setUser}
           setToken={setToken}

@@ -66,71 +66,69 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <>
-      <Container className=' d-flex justify-content-center'>
-        <Form id='box-login' onSubmit={handleSubmit}>
-          <div id='form-login'>
-            <h2 className='font-style'>Login</h2>
-            <Form.Group controlId='formUsername'>
-              <Form.Label></Form.Label>
-              <InputGroup>
-                <Form.Control
-                  type='text'
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                  minLength='7'
-                  placeholder='Username'
-                />
-                <InputGroup.Text id='input-style-login'>
-                  <BsFillPersonFill size={25} className='user-icon' />
-                </InputGroup.Text>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group controlId='formPassword'>
-              <Form.Label></Form.Label>
-              <InputGroup>
-                <Form.Control
-                  id=''
-                  type='password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  minLength='10'
-                  placeholder='Password'
-                />
-                <InputGroup.Text id='input-style-login'>
-                  <AiFillLock size={25} className='user-icon' />
-                </InputGroup.Text>
-              </InputGroup>
-            </Form.Group>
-            <Button
-              id='btn-login-nf'
-              className='mt-2 col-10 font-style'
-              type='submit'
-            >
-              Log In
-            </Button>
-            <Row>
-              <Col>
-                <Link
-                  to={'/forgot-password'}
-                  className='link-style-signup font-style forgot-pass'
-                >
-                  Forgot Password?
-                </Link>
-              </Col>
-            </Row>
-            <Row>
-              <Col className='mt-3'>
-                <span className='font-style '>Not a member?</span>{' '}
-                <Link to={'/signup'} className='link-style-login font-style'>
-                  Signup
-                </Link>
-              </Col>
-            </Row>
-          </div>
-        </Form>
-      </Container>
+      <Form id='box-login' onSubmit={handleSubmit}>
+        <div id='form-login'>
+          <h2 className='font-style'>Login</h2>
+          <Form.Group controlId='formUsername'>
+            <Form.Label></Form.Label>
+            <InputGroup>
+              <Form.Control
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                minLength='7'
+                placeholder='Username'
+              />
+              <InputGroup.Text id='input-style-login'>
+                <BsFillPersonFill size={25} className='user-icon' />
+              </InputGroup.Text>
+            </InputGroup>
+          </Form.Group>
+          <Form.Group controlId='formPassword'>
+            <Form.Label></Form.Label>
+            <InputGroup>
+              <Form.Control
+                id=''
+                type='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength='10'
+                placeholder='Password'
+              />
+              <InputGroup.Text id='input-style-login'>
+                <AiFillLock size={25} className='user-icon' />
+              </InputGroup.Text>
+            </InputGroup>
+          </Form.Group>
+          <Button
+            id='btn-login-nf'
+            className='mt-2 col-10 font-style'
+            type='submit'
+          >
+            Log In
+          </Button>
+          <Row>
+            <Col>
+              <Link
+                to={'/forgot-password'}
+                className='link-style-signup font-style forgot-pass'
+              >
+                Forgot Password?
+              </Link>
+            </Col>
+          </Row>
+          <Row>
+            <Col className='mt-3'>
+              <span className='font-style '>Not a member?</span>{' '}
+              <Link to={'/signup'} className='link-style-login font-style'>
+                Signup
+              </Link>
+            </Col>
+          </Row>
+        </div>
+      </Form>
     </>
   );
 };
