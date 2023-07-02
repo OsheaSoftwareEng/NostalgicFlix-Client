@@ -279,7 +279,7 @@ export const MainView = () => {
                       {<LoadingSpinner className='spinner-pos' />}
                     </Col>
                   ) : (
-                    <Col xs={10} sm={9}>
+                    <Col>
                       <MovieView
                         movieInfo={movies}
                         key={movies._id}
