@@ -5,6 +5,9 @@ span {
 #logo {
 	width: 400px;
 	height: auto;
+	position: absolute;
+	position: relative;
+	bottom: 15px;
 }
 
 
@@ -15,7 +18,7 @@ span {
 
 @media (max-width: 576px) {
 	#logo {
-		width: 70%;
+		width: 59%;
 		height: auto;
 	}
 }
