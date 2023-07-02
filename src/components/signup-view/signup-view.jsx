@@ -77,7 +77,7 @@ export const SignupView = () => {
   return (
     <Form id='box-signup' onSubmit={handleSubmit}>
       <div id='form-signup'>
-        <h2 className='font-style signup-header'>Signup</h2>
+        <h2 className='font-style signup-header p-2'>Signup</h2>
         <Container id='form-position'>
           <Form.Group controlId='formUsername'>
             <Form.Label></Form.Label>

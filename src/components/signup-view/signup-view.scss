@@ -46,6 +46,8 @@
     background: #1c1c1c;
     overflow: hidden;
 	text-align: center;
+    overflow: hidden;
+    bottom: 30px;
 	
 }
 
@@ -98,6 +100,8 @@
     flex-direction: column;
 	align-items: center;
     position: relative;
+    overflow: hidden;
+  
 	
 }
 #form-signup h2 {
