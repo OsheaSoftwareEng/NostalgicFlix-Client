@@ -20,8 +20,6 @@ export const MovieCarousel = ({ movie }) => {
     setCurrent(newIndex);
   };
 
-  console.log(current);
-
   return (
     <>
       <Container>
@@ -49,20 +47,20 @@ export const MovieCarousel = ({ movie }) => {
             }}
           /> */}
           {featuredMovie.map((movie, index) => (
-            <Link key={index} id='link-style' to={`/movies/${movie._id}`}>
-              <img
-                //width calculated based off the number of photos in featured one photo 100% width 38 photos 100*38 = 2.63
-                style={{ transform: `translateX(-${current * 100}%)` }}
-                height='true'
-                className='movie-carousel'
-                src={movie.ImagePath}
-                alt={movie.Title}
-              />
-            </Link>
+            <div style={{ transform: `translateX(-${current * 100}%)` }}>
+              <Link key={index} id='link-style' to={`/movies/${movie._id}`}>
+                <img
+                  //width calculated based off the number of photos in featured one photo 100% width 38 photos 100*38 = 2.63
+                  height='true'
+                  className='movie-carousel'
+                  src={movie.ImagePath}
+                  alt={movie.Title}
+                />
+              </Link>
+            </div>
           ))}
         </div>
       </Container>
-      console.log(current);
     </>
   );
 };
