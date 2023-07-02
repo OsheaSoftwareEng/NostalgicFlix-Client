@@ -9,7 +9,7 @@
 
 **Tech used:** React, HTML5, CSS3, JavaScript, Bootstrap, node.js,express
 
-Used the REST API i build in on backend and connected it for this application and pulled the data to be dynamically displayed through the application. Users are able to sign up, login, favorite/unfavorite movies and update their settings. I've also added in a forget password in the backend for users to recover it from a page using ejs. I designed the UI based off of many popular movie sites and added smooth navigation for users experience.
+Used the REST API i built in on backend and connected it for this application and pulled the data to be dynamically displayed through the application. Users are able to sign up, login, favorite/unfavorite movies and update their settings. I've also added in a forget password in the backend for users to recover it from a page using ejs. I designed the UI based off of many popular movie sites and added smooth navigation for users experience.
 
 ## Optimizations
 
