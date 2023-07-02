@@ -8,6 +8,12 @@ import { BsBookmarkPlusFill, BsBookmarkPlus } from 'react-icons/bs';
 
 //information for movie information displayed once user clicks a movie
 export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
+  //monitors the DOM and when a movie is clicked it will always scroll to the top if it's not already there.
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   //gets movie id from database and uses it as the parameters in the url
   const { movieId } = useParams();
 
@@ -17,11 +23,6 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
   //searches through the database of movies and filters out movies with the same genre and displays them but not the same movie
   const similarMovies = (genreName) =>
     movie.filter((m) => m.Genre.Name == genreName && m._id !== movieId);
-
-  //monitors the DOM and when a movie is clicked it will always scroll to the top if it's not already there.
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   //custom alerts when a users does an action
   const Toast = Swal.mixin({
