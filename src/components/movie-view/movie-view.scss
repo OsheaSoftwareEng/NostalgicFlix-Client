@@ -5,7 +5,11 @@
 	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
 	width: 100%;
 	height: 100%;
-  }
+ 	 }
+
+  #container {
+	max-width: none;
+  	}
   
 	.react-player {
 		position: absolute;
@@ -13,7 +17,7 @@
 		left: 0;
 		width: auto;
 		height: auto;
-	}
+		}
 
 
   //users favorites bookmark css
@@ -21,12 +25,14 @@
 	cursor: pointer;
 	}
 	.move-bookmark-mv {
-	width: 3.5vw;
+	width: 3.2vw;
 	height: auto;
+	position: absolute;
 	position: relative;
-	top:-13px;
+	top:0px;
+	right: -4px;
 	color: white;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,.0);
 	}
 	
 	#similar-movies {
@@ -57,10 +63,15 @@
 
 	//container for top section with gradient background
 		#movie-view-section-top {
-		height: 200%;
-		width: 130%;
+		// height: 200%;
+		width: 100vw;
+		max-width: 100vw;
 		position: relative;
-		right:130px;
+		left: 50vw;
+		left: -50vw;
+		margin-left: 50%;
+		// position: relative;
+		// right:130px;
 		background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(91, 90, 90) 90.2%);
 		overflow: hidden;
 	}
@@ -74,19 +85,25 @@
 	//white container that holds the bottom movie description 
 	#movie-view-section-bottom {
 		background-color: white;
-		height: 100%;
-		width: 130%;
+		// height: 100%;
+		width: 100vw;
+		max-width: 100vw;
 		position: relative;
-		right:130px;
+		left: 50vw;
+		left: -50vw;
+		margin-left: 50%;
 		overflow-x: hidden;
 	}
 
 	//grey container that holds content in bottom section 
 	#movie-description-section-bottom {
 		background: #F5f5f5;
-		width: 100%;
+		width: 100vw;
+		max-width: 100vw;
 		position: relative;
-		right: -3px;
+		left: 50vw;
+		left: -50vw;
+		margin-left: 50%;
 	}
 
 	//css for movie case poster
@@ -100,10 +117,8 @@
 	//css for release date, rating, and movie length
 	.movie-stats {
 		color: #BDBDBD;
-		font-size: 0.8em;
-		position: relative;
-		bottom: 10px;
-		left: 5px;
+		font-size: 0.9em;
+		padding: 15px;
 	}
 
 
@@ -116,352 +131,159 @@
 	//movie title style
 	.title-style {
 		font-size: 4vw;
+		padding-left: 15px;
 	}
 
 
 
-	//media queries for all screen size responsiveness
-	@media (max-width: 768px) {
+	// //media queries for all screen size responsiveness
+	@media (max-width: 767px) {
 
-		#movie-view-section-top {
-			height: 64%;
-			width: 145%;
-			position: relative;
-			right:100px;
-		}
-
-		#movie-view-section-bottom {
-			height: 55%;
-			width: 150%;
-			position: relative;
-			right:105px;
-		}
-
-		#movie-image {
-			display: none;
-			position: relative;
-			top: -8px;
-			width: 55%;
-			height: 50%;
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		// right: -3px;
+		top: -3px;
 		}
 
 		.movie-stats {
-			position: relative;
-			left: 220px;
-			bottom: 60px;
-			font-size: 0.5em;
+			position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -15px;
 		}
 
-		
-
-		.react-player {
+		#movie-image {
 			position: absolute;
-			top: -15%;
-			left: -27%;
+			position: relative;
+			// right: 55px;
+			top: 5px;
+		}
+	}
+
+	@media (max-width: 575px) {
+		#movie-image {
+			display: none;
+
+		}
+
+		.movie-stats {
+			font-size: 8px;
+			position: absolute;
+				position: relative;
+				right: 24px;
+				bottom: 10px;
 		}
 
 		.player-wrapper {
-			width: 140%;
-			height: 120%;
+			width: 210%;
+			height: 170%;
+			position: absolute;
+				position: relative;
+				bottom: 5px;
+				right: 270px;
 		}
+
+		#movie-view-section-bottom {
+			margin-top: 95px;
+					}
 
 
 		.move-bookmark-mv {
-			width: 3.5vw;
-			height: auto;
-			position: relative;
-			top:-29px;
-			left: 302px;
-			color: white;
-			background-color: rgba(0,0,0,.5);
+			position: absolute;
+				position: relative;
+				right: 22px;
 			}
 
 			.title-style {
-				font-size: 13px;
+				position: absolute;
 				position: relative;
-				top: 0px;
-				margin-top: 12px;
-			}
-	}
-
-	@media (max-width: 834px) {
-		#movie-view-section-bottom {
-			height: 55%;
-			width: 138%;
-			position: relative;
-			right:75px;
-		}
-	
-		#movie-view-section-top {
-			height: 64%;
-			width: 138%;
-			position: relative;
-			right:75px;
-		}
-	
+				right: 24px;
+			}	
 	}
 
 
-	@media (max-width: 576px) {
-	#movie-view-section-bottom {
-		height: 55%;
-		width: 138%;
-		position: relative;
-		right:45px;
-	}
 
-	#movie-view-section-top {
-		height: 64%;
-		width: 138%;
-		position: relative;
-		right:45px;
-	}
-
-	#react-move {
-		position: relative;
-		top: 25px;
-		right: 35px;
-	}
-
-		#movie-image {
-			position: relative;
-			top: -9px;
-			width: 60%;
-			height: auto;
-		}
-
-		.react-player {
-			position: absolute;
-			top: -39%;
-			left: -45%;
-		}
+	@media (max-width: 526px) {
 
 		.player-wrapper {
-			width: 250%;
-			height: 140%;
+			width: 210%;
+			height: 170%;
+			position: absolute;
+				position: relative;
+				bottom: -3px;
+				right: 250px;
 		}
 
-		.title-style {
-			font-size: 13px;
-			position: relative;
-			top: -6px;
-			margin-top: 12px;
-			left: 25px;
+		.movie-stats {
+			position: absolute;
+				position: relative;
+				right: 24px;
+				padding: 10px;
 		}
-
-		.move-bookmark-mv {
-			width: 3.2vw;
-			height: auto;
-			position: relative;
-			top:-35px;
-			left: 302px;
-			color: white;
-			background-color: rgba(0,0,0,.5);
-			}
 	}
 
-			@media (max-width: 476px) {
+	@media (max-width: 485px) {
 
-				#movie-view-section-bottom {
-					height: 55%;
-					width: 135%;
-					position: relative;
-					right:12px;
-				}
-			
-				#movie-view-section-top {
-					height: 64%;
-					width: 140%;
-					position: relative;
-					right:15px;
-				}
-				
-				#movie-image {
-					display: none;
-					position: relative;
-					top: -8px;
-					width: 55%;
-					height: 50%;
-				}
-	
-				.movie-stats {
-					position: relative;
-					left: 220px;
-					bottom: 71px;
-					font-size: 0.5em;
-				}
-	
-				.react-player {
-					position: absolute;
-					top: -55%;
-					left: -44%;
-				}
-	
-				.player-wrapper {
-					width: 235%;
-					height: 165%;
-				}
-	
-	
-				.move-bookmark-mv {
-					width: 3.3vw;
-					height: auto;
-					position: relative;
-					top:-46px;
-					left: 302px;
-					color: white;
-					background-color: rgba(0,0,0,.5);
-					}
-	
-					.title-style {
-						font-size: 13px;
-						position: relative;
-						top: -10px;
-						margin-top: 12px;
-						padding-bottom: 5px;
-					}
-					
-			}
-	
-
-
-		@media (max-width: 375px) {
-
-			#movie-image {
-				display: none;
+		.player-wrapper {
+			width: 220%;
+			height: 170%;
+			position: absolute;
 				position: relative;
-				top: -8px;
-				width: 55%;
-				height: 50%;
-			}
-
-			.movie-stats {
-				position: relative;
-				left: 220px;
-				bottom: 73px;
-				font-size: 0.5em;
-			}
-
-			.react-player {
-				position: absolute;
-				top: -58%;
-				left: -43%;
-			}
-
-			.player-wrapper {
-				width: 235%;
-				height: 185%;
-			}
-
-
-			.move-bookmark-mv {
-				width: 3.5vw;
-				height: auto;
-				position: relative;
-				top:-48px;
-				left: 302px;
-				color: white;
-				background-color: rgba(0,0,0,.5);
-				}
-
-				.title-style {
-					font-size: 13px;
-					position: relative;
-					top: -14px;
-					margin-top: 12px;
-					padding: 5px;
-				}
+				bottom: -3px;
+				right: 225px;
 		}
 
-		@media (max-width: 320px) {
+		.movie-stats {
+			position: absolute;
+				position: relative;
+				right: 24px;
+				padding: 10px;
+		}
+	}
 
-			#movie-image {
-				display: none;
+	@media (max-width: 430px) {
+
+		.player-wrapper {
+			width: 220%;
+			height: 210%;
+			position: absolute;
 				position: relative;
-				top: -8px;
-				width: 55%;
-				height: 50%;
-			}
-	
-			.react-player {
-				position: absolute;
-				top: -64%;
-				left: -43%;
-			}
-	
-			.movie-stats {
+				bottom: 7px;
+				right: 200px;
+		}
+	}
+
+	@media (max-width: 360px) {
+
+		.player-wrapper {
+			width: 270%;
+			height: 240%;
+			position: absolute;
 				position: relative;
-				left: 175px;
-				bottom: 70px;
-				font-size: 0.5em;
-			}
+				bottom: 9px;
+				right: 210px;
+		}
+	}
+
+	@media (max-width: 320px) {
+
+		.player-wrapper {
+			width: 270%;
+			position: absolute;
+				position: relative;
+				right: 170px;
+		}
+
+		@media (max-width: 274px) {
 
 			.player-wrapper {
-				width: 254%;
-				height: 186%;
-			}
-
-			.move-bookmark-mv {
-				width: 3.5vw;
-				height: auto;
-				position: relative;
-				top:-45px;
-				left: 257px;
-				color: white;
-				background-color: rgba(0,0,0,.5);
-				}
-
-				.title-style {
-					font-size: 4vw;
-					position: relative;
-					top: -10px;
-					padding-bottom: 5px;
-				}
-
-				#movie-view-section-top {
-					height: 110%;
-					width: 149%;
-					position: relative;
-					right:31px;
-					background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(91, 90, 90) 90.2%);
-					overflow: hidden;
-				}
-
-				#movie-view-section-bottom {
-					height: 55%;
-					width: 149%;
-					position: relative;
-					right:30px;
-					overflow: hidden;
-				}
-			
-
-			@media (max-width: 310px) {
-
-			#movie-image {
-				position: relative;
-				top: -13px;
-				right: 8px;
-				width: 55%;
-				height: 50%;
-			}
-	
-			.react-player {
+				width: 270%;
 				position: absolute;
-				top: -47%;
-				left: -20%;
-			}
-	
-			.movie-stats {
-				position: relative;
-				left: -6px;
-				bottom: 25px;
-			}
-
-			.player-wrapper {
-				width: 165%;
-				height: 120%;
-			}
+					position: relative;
+					right: 160px;
 			}
 		}
+	}
+
 

@@ -119,10 +119,10 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
 
   return (
     <>
-      <Container>
-        <Container fluid id='movie-view-section-top' className=''>
+      <Container id='container' className='p-0 m-0'>
+        <Container fluid id='movie-view-section-top container container-push'>
           <Row>
-            <Col className='col-md-9'>
+            <Col className='col-md-9 p-0 d-flex margin-style'>
               <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
               {Favorite ? (
                 <BsBookmarkPlusFill
@@ -168,18 +168,21 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
             </Col>
           </Row>
         </Container>
-        <Container id='movie-view-section-bottom' className=''>
-          <Container className='h-100' id='movie-description-section-bottom'>
+        <Container id='movie-view-section-bottom' className='p-0'>
+          <Container
+            className='h-100'
+            id='movie-description-section-bottom p-0'
+          >
             <Row>
               <Col>
-                <h2 className='movie-description-heading mt-1 font-style-bold'>
+                <h2 className='movie-description-heading mt-1 font-style-bold p-1'>
                   Storyline
                 </h2>
               </Col>
             </Row>
             <Row>
               <Col className='mb-2 pb-3'>
-                <span className='movie-description font-style p-3'>
+                <span className='movie-description font-style p-0'>
                   {Movie.Description}
                 </span>
               </Col>
