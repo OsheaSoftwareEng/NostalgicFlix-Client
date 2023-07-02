@@ -12,6 +12,7 @@
 .movie-carousel {
     max-height: 250px;
 	transition: 0.3s;
+  // margin-right: 10px;
   }
   
   .movie-carousel:hover {
@@ -27,6 +28,29 @@
   
   .row-posters::-webkit-scrollbar {
     display: none;
+  }
+
+  .left-arrow {
+    color: white;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 25%;
+    left: 298px;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+
+  }
+
+  .right-arrow {
+    color:white;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 25%;
+    right: 295px;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none
   }
 
   

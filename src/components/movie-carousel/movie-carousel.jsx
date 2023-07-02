@@ -1,10 +1,26 @@
 import { Row, Col, Container, Card } from 'react-bootstrap';
 import './movie-carousel.scss';
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
+import { HiOutlineArrowSmLeft } from 'react-icons/hi';
+import { HiOutlineArrowSmRight } from 'react-icons/hi';
 
 export const MovieCarousel = ({ movie }) => {
   const featuredMovie = movie.filter((movie) => (movie.Featured ? true : null));
+  const [current, setCurrent] = useState(0);
+  const movieLength = featuredMovie.length;
+
+  //sets index
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = 0;
+    } else if (newIndex >= movieLength) {
+      newIndex = movieLength - 1;
+    }
+    setCurrent(newIndex);
+  };
+
+  console.log(current);
 
   return (
     <>
@@ -18,13 +34,35 @@ export const MovieCarousel = ({ movie }) => {
         </Row>
 
         <div className='row-posters'>
-          {featuredMovie.map((movie) => (
-            <Link id='link-style' to={`/movies/${movie._id}`}>
-              <img className='movie-carousel' src={movie.ImagePath} alt='' />
+          <HiOutlineArrowSmLeft
+            size={45}
+            className='left-arrow'
+            onClick={() => {
+              updateIndex(current - 1);
+            }}
+          />
+          <HiOutlineArrowSmRight
+            size={45}
+            className='right-arrow'
+            onClick={() => {
+              updateIndex(current + 1);
+            }}
+          />
+          {featuredMovie.map((movie, index) => (
+            <Link key={index} id='link-style' to={`/movies/${movie._id}`}>
+              <img
+                //width calculated based off the number of photos in featured one photo 100% width 38 photos 100*38 = 2.63
+                style={{ transform: `translateX(-${current * 26}%)` }}
+                height='true'
+                className='movie-carousel'
+                src={movie.ImagePath}
+                alt={movie.Title}
+              />
             </Link>
           ))}
         </div>
       </Container>
+      console.log(current);
     </>
   );
 };
