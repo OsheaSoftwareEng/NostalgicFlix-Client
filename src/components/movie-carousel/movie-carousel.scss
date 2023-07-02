@@ -34,8 +34,8 @@
     color: white;
     background-color: rgba(0,0,0,.3);
     position: absolute;
-    top: 25%;
-    left: 298px;
+    top: 23%;
+    left: 320px;
     z-index: 10;
     cursor: pointer;
     user-select: none;
@@ -46,12 +46,26 @@
     color:white;
     background-color: rgba(0,0,0,.3);
     position: absolute;
-    top: 25%;
-    right: 295px;
+    top: 23%;
+    right: 298px;
     z-index: 10;
     cursor: pointer;
     user-select: none
   }
+
+  @media (max-width: 1669px) {
+
+
+  .left-arrow {
+    display: none;
+    position: absolute;
+  }
+
+  .right-arrow {
+    position: absolute;
+    display: none;
+  }
+}
 
   
 
