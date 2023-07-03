@@ -158,7 +158,7 @@ export const SignupView = () => {
           </Form.Group>
 
           <Button
-            className='mt-3 col-10 font-style'
+            className='p-1 mt-2 col-10 font-style'
             variant='btn btn-success'
             type='submit'
           >
