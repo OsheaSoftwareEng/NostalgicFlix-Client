@@ -1,13 +1,13 @@
 # NostalgicFlix Movie App
 
-**Link to project:** www.nostalgicflix.com <br>
+**Link to project:** https://www.nostalgicflix.com <br>
 **Link to API:** https://github.com/OsheaSoftwareEng/NostalgicFlix-API
 
 ![alt tag](https://imgur.com/qMkMAoB.png)
 
 ## How It's Made:
 
-**Tech used:** React, HTML5, CSS3, JavaScript, Bootstrap, node.js,express
+**Tech used:** React, HTML5, SCSS, JavaScript, Bootstrap, Node.js,Express
 
 Used the REST API i built in on backend and connected it for this application and pulled the data to be dynamically displayed through the application. Users are able to sign up, login, favorite/unfavorite movies and update their settings. I've also added in a forget password in the backend for users to recover it from a page using ejs. I designed the UI based off of many popular movie sites and added smooth navigation for users experience.
 
