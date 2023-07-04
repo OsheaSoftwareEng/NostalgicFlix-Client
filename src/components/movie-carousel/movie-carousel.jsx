@@ -43,11 +43,11 @@ export const MovieCarousel = ({ movie }) => {
             size={45}
             className='right-arrow'
             onClick={() => {
-              updateIndex(current + 1);
+              updateIndex(current + 2);
             }}
           />
           {featuredMovie.map((movie, index) => (
-            <div style={{ transform: `translateX(-${current * 150}%)` }}>
+            <div style={{ transform: `translateX(-${current * 82}%)` }}>
               <Link key={index} id='link-style' to={`/movies/${movie._id}`}>
                 <img
                   //width calculated based off the number of photos in featured one photo 100% width 38 photos 100*38 = 2.63
