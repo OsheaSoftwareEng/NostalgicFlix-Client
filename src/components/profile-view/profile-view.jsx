@@ -7,9 +7,6 @@ import { FaUserEdit, FaUserLock } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 export const ProfileView = ({ user, token, movie, updatedUser, loggedOut }) => {
-  //filters through the movie collection to find all the users favorites
-  let result = movie.filter((movie) => user.FavoriteMovies.includes(movie._id));
-
   //function to do a delete request and delete the users account
   const deleteAccount = () => {
     fetch(`https://nostalgic-flix.herokuapp.com/users/${user.Username}`, {
@@ -101,18 +98,6 @@ export const ProfileView = ({ user, token, movie, updatedUser, loggedOut }) => {
           </div>
         </div>
       </Container>
-      <Row>
-        {result.map((movie) => (
-          <Col className='mb-4' md={3}>
-            <MovieCard
-              movie={movie}
-              user={user}
-              updatedUser={updatedUser}
-              token={token}
-            />
-          </Col>
-        ))}
-      </Row>
     </>
   );
 };
