@@ -121,53 +121,55 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
   return (
     <>
       <Container id='container' className='p-0 m-0'>
-        <Container fluid id='movie-view-section-top container container-push'>
-          <Row>
-            <Col className='col-md-9 p-0 d-flex margin-style'>
-              <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
-              {Favorite ? (
-                <BsBookmarkPlusFill
-                  className='full-bookmark move-bookmark-mv'
-                  color='#ff6b81'
-                  size
-                  onClick={removeFavorite}
-                />
-              ) : (
-                <BsBookmarkPlus
-                  className='outline-bookmark move-bookmark-mv'
-                  size
-                  onClick={addFavorite}
-                />
-              )}
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <span className='movie-stats font-style'>
-                {Movie.ReleaseDate} · {Movie.Rating} · {Movie.MovieLength}
-              </span>
-            </Col>
-          </Row>
-          <Row>
-            <Col fluid className='col-xs-7 col-sm-3 col-md-3'>
-              <div className='col-xs-5'>
-                <img id='movie-image' src={Movie.ImagePath} alt='' />
-              </div>
-            </Col>
-            <Col fluid className='col-sm-9 col-md-9'>
-              <div id='react-move' className='player-wrapper'>
-                <ReactPlayer
-                  className='react-player'
-                  url={Movie.MovieEmbed}
-                  playing={true}
-                  volume={null}
-                  controls={true}
-                  width='100%'
-                  height='100%'
-                />
-              </div>
-            </Col>
-          </Row>
+        <Container fluid id='movie-view-section-top'>
+          <div id='movie-content'>
+            <Row>
+              <Col className='col-md-9 p-0 d-flex margin-style'>
+                <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
+                {Favorite ? (
+                  <BsBookmarkPlusFill
+                    className='full-bookmark move-bookmark-mv'
+                    color='#ff6b81'
+                    size
+                    onClick={removeFavorite}
+                  />
+                ) : (
+                  <BsBookmarkPlus
+                    className='outline-bookmark move-bookmark-mv'
+                    size
+                    onClick={addFavorite}
+                  />
+                )}
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <span className='movie-stats font-style'>
+                  {Movie.ReleaseDate} · {Movie.Rating} · {Movie.MovieLength}
+                </span>
+              </Col>
+            </Row>
+            <Row>
+              <Col fluid className='col-xs-7 col-sm-3 col-md-3'>
+                <div className='col-xs-5'>
+                  <img id='movie-image' src={Movie.ImagePath} alt='' />
+                </div>
+              </Col>
+              <Col fluid className='col-sm-9 col-md-9'>
+                <div id='react-move' className='player-wrapper'>
+                  <ReactPlayer
+                    className='react-player'
+                    url={Movie.MovieEmbed}
+                    playing={true}
+                    volume={null}
+                    controls={true}
+                    width='100%'
+                    height='100%'
+                  />
+                </div>
+              </Col>
+            </Row>
+          </div>
         </Container>
         <Container id='movie-view-section-bottom' className='p-0'>
           <Container
