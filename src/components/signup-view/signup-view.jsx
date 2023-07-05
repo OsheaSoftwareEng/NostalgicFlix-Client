@@ -57,18 +57,20 @@ export const SignupView = () => {
       }
     })
       .then((response) => {
+        console.log(response);
         if (response.ok) {
           Toast.fire({
             icon: 'success',
             title: 'Signup successful please login'
           });
-          setTimeout(function () {
-            window.location.replace('/login');
-          }, 2000);
+          // setTimeout(function () {
+          //   window.location.replace('/login');
+          // }, 2000);
         } else {
+          console.log(response.statusText);
           Toast.fire({
             icon: 'error',
-            title: 'Username is already taken'
+            title: response.statusText
           });
         }
       })
