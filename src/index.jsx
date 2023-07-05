@@ -1,10 +1,15 @@
 import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view.jsx';
 import './index.scss';
+import { Container } from 'react-bootstrap';
 
 //Main component (will eventually use all the others)
 export const App = () => {
-  return <MainView />;
+  return (
+    <Container>
+      <MainView />
+    </Container>
+  );
 };
 
 //finds the root of your app
