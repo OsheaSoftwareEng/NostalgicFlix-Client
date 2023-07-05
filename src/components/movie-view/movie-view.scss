@@ -139,6 +139,11 @@
 
 	@media (min-width: 576px) {
 
+		#be-gone {
+			padding: 0;
+			width: 0px;
+		}
+
 		#movie-image {
 			display: block;
 		position: relative;
