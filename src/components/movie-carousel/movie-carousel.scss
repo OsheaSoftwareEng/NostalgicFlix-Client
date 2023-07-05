@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (min-width: 390px) {
   .left-arrow {
     display: none;
     position: absolute;
