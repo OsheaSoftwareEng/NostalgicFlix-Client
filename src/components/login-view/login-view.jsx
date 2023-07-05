@@ -77,7 +77,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                minLength='7'
+                minLength='5'
                 placeholder='Username'
               />
               <InputGroup.Text id='input-style-login'>

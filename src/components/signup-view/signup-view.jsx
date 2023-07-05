@@ -55,22 +55,31 @@ export const SignupView = () => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then((response) => {
-      if (response.ok) {
-        Toast.fire({
-          icon: 'success',
-          title: 'Signup successful please login'
-        });
-        setTimeout(function () {
-          window.location.replace('/login');
-        }, 2000);
-      } else {
-        Toast.fire({
-          icon: 'error',
-          title: 'Signup failed'
-        });
-      }
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          Toast.fire({
+            icon: 'success',
+            title: 'Signup successful please login'
+          });
+          setTimeout(function () {
+            window.location.replace('/login');
+          }, 2000);
+        } else {
+          Toast.fire({
+            icon: 'error',
+            title: 'Username is already taken'
+          });
+        }
+      })
+      .catch((e) => {
+        if (e) {
+          Toast.fire({
+            icon: 'error',
+            title: 'Email is already taken'
+          });
+        }
+      });
   };
 
   //returns a signup form
@@ -87,7 +96,7 @@ export const SignupView = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                minLength='7'
+                minLength='5'
                 placeholder='Username'
               />
               <InputGroup.Text id='input-style-signup'>
