@@ -6,9 +6,9 @@ import { Container } from 'react-bootstrap';
 //Main component (will eventually use all the others)
 export const App = () => {
   return (
-    <Container>
+    <div className='app'>
       <MainView />
-    </Container>
+    </div>
   );
 };
 

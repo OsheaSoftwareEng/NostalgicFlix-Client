@@ -2,6 +2,9 @@ $primary: black;
 $body-bg: Black;
 $body-color: white;
 
+.app {
+	height: 100vh;
+}
 
 
 @import '~bootstrap/scss/bootstrap.scss';
