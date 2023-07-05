@@ -5,11 +5,7 @@ import { Container } from 'react-bootstrap';
 
 //Main component (will eventually use all the others)
 export const App = () => {
-  return (
-    <div className='app'>
-      <MainView />
-    </div>
-  );
+  return <MainView />;
 };
 
 //finds the root of your app
