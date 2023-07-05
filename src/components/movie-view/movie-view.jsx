@@ -121,8 +121,8 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
   return (
     <>
       <Container id='container' className='p-0 m-0'>
-        <Container id='movie-view-section-top'>
-          <div id='movie-details'>
+        <Container fluid id='movie-view-section-top'>
+          <div id='movie-content'>
             <Row>
               <Col className='col-md-9 p-0 d-flex margin-style'>
                 <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
@@ -149,23 +149,26 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
                 </span>
               </Col>
             </Row>
-          </div>
-          <Row>
-            <div>
-              <img id='movie-image' src={Movie.ImagePath} alt='' />
-            </div>
-          </Row>
-
-          <div id='react-move' className='player-wrapper'>
-            <ReactPlayer
-              className='react-player'
-              url={Movie.MovieEmbed}
-              playing={true}
-              volume={0}
-              controls={true}
-              width='100%'
-              height='100%'
-            />
+            <Row>
+              <Col fluid className=''>
+                <div className=''>
+                  <img id='movie-image' src={Movie.ImagePath} alt='' />
+                </div>
+              </Col>
+              <Col fluid className='col-sm-9 col-md-9'>
+                <div id='react-move' className='player-wrapper'>
+                  <ReactPlayer
+                    className='react-player'
+                    url={Movie.MovieEmbed}
+                    playing={true}
+                    volume={0}
+                    controls={true}
+                    width='100%'
+                    height='100%'
+                  />
+                </div>
+              </Col>
+            </Row>
           </div>
         </Container>
         <Container id='movie-view-section-bottom' className='p-0'>
