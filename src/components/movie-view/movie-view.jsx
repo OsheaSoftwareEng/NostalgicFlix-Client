@@ -121,7 +121,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
   return (
     <>
       <Container id='container' className='p-0 m-0'>
-        <Container fluid id='movie-view-section-top'>
+        <Container id='movie-view-section-top'>
           <div id='movie-content'>
             <Row>
               <Col className='col-md-9 p-0 d-flex margin-style'>

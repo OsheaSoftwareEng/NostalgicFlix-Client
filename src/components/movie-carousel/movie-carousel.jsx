@@ -22,7 +22,7 @@ export const MovieCarousel = ({ movie }) => {
 
   return (
     <>
-      <Container>
+      <Container id='container-max'>
         <Row>
           <Col>
             <h2 className='movie-featured-heading mt-2 font-style-bold'>
