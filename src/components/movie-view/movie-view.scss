@@ -148,7 +148,7 @@
 	}
 	}
 
-	@media (min-width: 521px) and (max-width: 575px) {
+	@media (min-width: 575px) {
 
 		#movie-image {
 			display: none;
@@ -156,11 +156,11 @@
 
 	.player-wrapper {
 		width: 210%;
-		height: 170%;
+		height: 180%;
 		position: absolute;
 		position: relative;
-		bottom: 2px;
-		right: 250px;
+		bottom: 15px;
+		right: 200px;
 	}
 
 	#movie-content {
@@ -175,11 +175,11 @@
 			}
 
 			.movie-stats {
-						font-size: 10px;
+						font-size: 8px;
 				position: absolute;
 				position: relative;
 				// right: 55px;
-				top: -18px;
+				top: -24px;
 			}	
 
 				.move-bookmark-mv {
@@ -190,7 +190,7 @@
 				}
 	}
 
-	@media (min-width: 484px) and (max-width: 520px) {
+	@media (min-width: 520px) {
 
 		#movie-view-section-top {
 			padding: 40px;
@@ -211,9 +211,17 @@
 			bottom: 5px;
 			right: 235px;
 		}
+
+		.movie-stats {
+			font-size: 9px;
+	position: absolute;
+	position: relative;
+	// right: 55px;
+	top: -20px;
+}	
 	}
 
-	@media (min-width: 389px) and (max-width: 485px) {
+	@media (min-width: 485px) {
 
 		#movie-view-section-top {
 			padding: 40px;
@@ -243,7 +251,7 @@
 		}
 	}
 
-	@media (min-width: 390px) and (max-width: 440px) {
+	@media (min-width: 440px) {
 
 		.player-wrapper {
 			width: 230%;
@@ -255,7 +263,7 @@
 		}
 	}
 
-	@media (min-width: 364px) and (max-width: 390px) {
+	@media (min-width: 390px) {
 
 		.player-wrapper {
 			width: 265%;
@@ -286,7 +294,7 @@
 		}
 	}
 
-	@media (min-width: 339px) and (max-width: 364px) {
+	@media (min-width: 364px){
 
 		.player-wrapper {
 			width: 265%;
@@ -317,7 +325,7 @@
 		}
 	}
 
-	@media (min-width: 319px) and (max-width: 340px) {
+	@media (min-width: 340px) {
 
 		.player-wrapper {
 			width: 280%;
@@ -349,15 +357,21 @@
 	}
 	
 
-	@media (min-width: 309px) and (max-width: 320px) {
+	@media (min-width: 320px){
 
-		.player-wrapper {
-			width: 280%;
-			height: 230%;
+		.title-style {
 			position: absolute;
 			position: relative;
-			bottom: 05px;
-			right: 190px;
+			right: 57px;
+		}
+
+		.player-wrapper {
+			width: 290%;
+			height: 240%;
+			position: absolute;
+			position: relative;
+			bottom: 10px;
+			right: 180px;
 		}
 
 		#movie-view-section-top {
@@ -377,10 +391,19 @@
 			position: absolute;
 			position: relative;
 			bottom: 16px;
+			right: 60px;
 		}
+
+		.move-bookmark-mv {
+					position: absolute;
+						position: relative;
+						right: 50px;
+						top: 0px;
+						width: 5.8vw;			
+					}
 	}
 
-	@media (min-width: 302px) and (max-width: 310px) {
+	@media (min-width: 310px) {
 
 		.player-wrapper {
 			width: 280%;
