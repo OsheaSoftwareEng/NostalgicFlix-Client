@@ -35,7 +35,6 @@ export const ForgotPassword = () => {
       })
       .then((user) => {
         if (user) {
-          console.log(user);
           Toast.fire({
             icon: 'success',
             title: 'Email Sent! Check spam if not in inbox'
