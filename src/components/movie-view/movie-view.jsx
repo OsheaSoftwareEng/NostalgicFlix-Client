@@ -150,11 +150,10 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
               </Col>
             </Row>
             <Row>
-              <Col fluid className='col-xs-7 col-sm-3 col-md-3'>
-                <div className='col-xs-5'>
-                  <img id='movie-image' src={Movie.ImagePath} alt='' />
-                </div>
-              </Col>
+              <div className='col-xs-5'>
+                <img id='movie-image' src={Movie.ImagePath} alt='' />
+              </div>
+
               <Col fluid className='col-sm-9 col-md-9'>
                 <div id='react-move' className='player-wrapper'>
                   <ReactPlayer
