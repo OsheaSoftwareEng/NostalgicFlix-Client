@@ -107,10 +107,7 @@
 
 	//css for movie case poster
 	#movie-image {
-		position: relative;
-		top: 35px;
-		width: 100%;
-		height: 100%;
+		display: none;
 	}
 
 	//css for release date, rating, and movie length
@@ -118,6 +115,9 @@
 		color: #BDBDBD;
 		font-size: 0.9em;
 		padding: 15px;
+		position: absolute;
+		position: relative;
+		bottom: 12px;
 	}
 
 
@@ -136,271 +136,460 @@
 
 
 	// //media queries for all screen size responsiveness
-	@media (max-width: 767px) {
 
-	.move-bookmark-mv {
-		position: absolute;
-		position: relative;
-		width: 5vw;
-		top: 1px;
-		}
-
-		.movie-stats {
-			position: absolute;
-		position: relative;
-		// right: 55px;
-		top: -15px;
-		}
+	@media (min-width: 576px) {
 
 		#movie-image {
-			position: absolute;
-			position: relative;
-			// right: 55px;
-			top: 5px;
-		}
+			display: block;
+		position: relative;
+		top: 35px;
+		width: 100%;
+		height: 100%;
+	}
 	}
 
 	@media (max-width: 575px) {
 
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
-
-		#movie-view-section-top {
-			padding: 40px;
-
-		}
 		#movie-image {
 			display: none;
-
 		}
 
-		.movie-stats {
-			font-size: 8px;
-			position: absolute;
-				position: relative;
-				right: 24px;
-				bottom: 10px;
-		}
-
-		.player-wrapper {
-			width: 210%;
-			height: 170%;
-			position: absolute;
-				position: relative;
-				bottom: 5px;
-				right: 270px;
-		}
-
-
-		.move-bookmark-mv {
-			position: absolute;
-				position: relative;
-				right: 15px;
-				top: 3px;
-				width: 5.8vw;			
-			}
-
-			.title-style {
-				position: absolute;
-				position: relative;
-				right: 24px;
-				top: 2px;
-			}	
+	.player-wrapper {
+		width: 210%;
+		height: 170%;
+		position: absolute;
+		position: relative;
+		bottom: 2px;
+		right: 250px;
 	}
 
-	@media (max-width: 540px) {
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 40px;
+	}
+
+	#movie-view-section-top {
+				padding: 40px;
+	
+			}
+
+			.movie-stats {
+						font-size: 10px;
+				position: absolute;
+				position: relative;
+				// right: 55px;
+				top: -18px;
+			}	
+
+				.move-bookmark-mv {
+						position: absolute;
+						position: relative;
+						width: 5vw;
+						top: -1px;
+				}
+	}
+
+	@media (max-width: 520px) {
 
 		.player-wrapper {
 			width: 210%;
 			height: 180%;
 			position: absolute;
-				position: relative;
-				bottom: 6px;
-				right: 250px;
-		}
-
-		.movie-stats {
-			position: absolute;
-				position: relative;
-				right: 24px;
-				padding: 10px;
+			position: relative;
+			bottom: 5px;
+			right: 235px;
 		}
 	}
 
 	@media (max-width: 485px) {
 
 		.player-wrapper {
-			width: 220%;
-			height: 190%;
+			width: 210%;
+			height: 180%;
 			position: absolute;
-				position: relative;
-				bottom: 8.5px;
-				right: 225px;
-		}
-
-		.movie-stats {
-			position: absolute;
-				position: relative;
-				right: 24px;
-				padding: 10px;
-				top: -16px;
-		}
-
-		.move-bookmark-mv {
-			position: absolute;
-				position: relative;
-				right: 15px;
-				top: 0px;
-				width: 5vw;			
-			}
-	}
-
-	@media (max-width: 450px) {
-		.player-wrapper {
-			width: 220%;
-			height: 210%;
-			position: absolute;
-				position: relative;
-				bottom: 8.5px;
-				right: 213px;
+			position: relative;
+			bottom: 5px;
+			right: 215px;
 		}
 	}
 
-
-	
-
-	@media (max-width: 430px) {
+	@media (max-width: 440px) {
 
 		.player-wrapper {
-			width: 235%;
-			height: 210%;
+			width: 230%;
+			height: 205%;
 			position: absolute;
-				position: relative;
-				bottom: 10px;
-				right: 190px;
+			position: relative;
+			bottom: 10px;
+			right: 200px;
 		}
 	}
 
 	@media (max-width: 390px) {
 
 		.player-wrapper {
-			width: 260%;
-			height: 210%;
+			width: 230%;
+			height: 230%;
 			position: absolute;
-				position: relative;
-				bottom: 10px;
-				right: 195px;
+			position: relative;
+			bottom: 12px;
+			right: 175px;
 		}
 	}
 
-
-	@media (max-width: 376px) {
-		.player-wrapper {
-			width: 270%;
-			height: 240%;
-			position: absolute;
-				position: relative;
-				bottom: 10px;
-				right: 195px;
-		}
-
-		.movie-stats {
-			position: absolute;
-				position: relative;
-				right: 24px;
-				padding: 10px;
-				top: -17.9px;
-		}
-	}
-	
-	@media (max-width: 370px) {
-	.player-wrapper {
-				width: 270%;
-				height: 240%;
-				position: absolute;
-					position: relative;
-					bottom: 13px;
-					right: 190px;
-			}
-
-			.movie-stats {
-				position: absolute;
-					position: relative;
-					right: 24px;
-					padding: 10px;
-					top: -18.5px;
-			}
-
-		}
-
-	@media (max-width: 360px) {
+	@media (max-width: 364px) {
 
 		.player-wrapper {
-			width: 270%;
-			height: 240%;
+			width: 265%;
+			height: 230%;
 			position: absolute;
-				position: relative;
-				bottom: 12px;
-				right: 183px;
+			position: relative;
+			bottom: 12px;
+			right: 180px;
 		}
 	}
 
-	@media (max-width: 341px) {
-
-		.player-wrapper {
-			width: 270%;
-			height: 240%;
-			position: absolute;
-				position: relative;
-				bottom: 8px;
-				right: 175px;
-		}
-	}
-
-	@media (max-width: 327px) {
+	@media (max-width: 340px) {
 
 		.player-wrapper {
 			width: 280%;
-			height: 240%;
+			height: 230%;
 			position: absolute;
-				position: relative;
-				bottom: 8px;
-				right: 165px;
+			position: relative;
+			bottom: 12px;
+			right: 175px;
 		}
 	}
-
 
 	@media (max-width: 320px) {
 
 		.player-wrapper {
-			width: 285%;
+			width: 290%;
+			height: 250%;
 			position: absolute;
-				position: relative;
-				right: 161px;
-		}
-
-		@media (max-width: 315px) {
-
-			.player-wrapper {
-				width: 296%;
-				position: absolute;
-					position: relative;
-					right: 167px;
-			}
-
-			@media (max-width: 303px) {
-
-				.player-wrapper {
-					width: 305%;
-					position: absolute;
-						position: relative;
-						right: 164px;
-				}
-			}
+			position: relative;
+			bottom: 5px;
+			right: 166px;
 		}
 	}
+
+	@media (max-width: 310px) {
+
+		.player-wrapper {
+			width: 300%;
+			height: 255%;
+			position: absolute;
+			position: relative;
+			bottom: 5px;
+			right: 166px;
+		}
+	}
+
+	@media (max-width: 303px) {
+
+		.player-wrapper {
+			width: 310%;
+			height: 260%;
+			position: absolute;
+			position: relative;
+			bottom: 5px;
+			right: 166px;
+		}
+	}
+
+	@media (max-width: 297px) {
+
+		.player-wrapper {
+			width: 325%;
+			height: 275%;
+			position: absolute;
+			position: relative;
+			bottom: 8px;
+			right: 166px;
+		}
+	}
+
+	@media (max-width: 288px) {
+
+		.player-wrapper {
+			width: 330%;
+			height: 285%;
+			position: absolute;
+			position: relative;
+			bottom: 8px;
+			right: 166px;
+		}
+	}
+
+
+
+
+	// @media (max-width: 767px) {
+
+	// .move-bookmark-mv {
+	// 	position: absolute;
+	// 	position: relative;
+	// 	width: 5vw;
+	// 	top: 1px;
+	// 	}
+
+	// 	.movie-stats {
+	// 		position: absolute;
+	// 	position: relative;
+	// 	// right: 55px;
+	// 	top: -15px;
+	// 	}
+
+	// 	#movie-image {
+	// 		position: absolute;
+	// 		position: relative;
+	// 		// right: 55px;
+	// 		top: 5px;
+	// 	}
+	// }
+
+	// @media (min-width: 575px) {
+
+	// 	#movie-content {
+	// 		position: absolute;
+	// 		position: relative;
+	// 		bottom: 40px;
+	// 	}
+
+	// 	#movie-view-section-top {
+	// 		padding: 40px;
+
+	// 	}
+	// 	#movie-image {
+			
+
+	// 	}
+
+	// 	.movie-stats {
+	// 		font-size: 8px;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 24px;
+	// 			bottom: 10px;
+	// 	}
+
+	// 	.player-wrapper {
+	// 		width: 210%;
+	// 		height: 170%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 5px;
+	// 			right: 270px;
+	// 	}
+
+
+	// 	.move-bookmark-mv {
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 15px;
+	// 			top: 3px;
+	// 			width: 5.8vw;			
+	// 		}
+
+	// 		.title-style {
+	// 			position: absolute;
+	// 			position: relative;
+	// 			right: 24px;
+	// 			top: 2px;
+	// 		}	
+	// }
+
+	// @media (max-width: 540px) {
+
+	// 	.player-wrapper {
+	// 		width: 210%;
+	// 		height: 180%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 6px;
+	// 			right: 250px;
+	// 	}
+
+	// 	.movie-stats {
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 24px;
+	// 			padding: 10px;
+	// 	}
+	// }
+
+	// @media (max-width: 485px) {
+
+	// 	.player-wrapper {
+	// 		width: 220%;
+	// 		height: 190%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 8.5px;
+	// 			right: 225px;
+	// 	}
+
+	// 	.movie-stats {
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 24px;
+	// 			padding: 10px;
+	// 			top: -16px;
+	// 	}
+
+	// 	.move-bookmark-mv {
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 15px;
+	// 			top: 0px;
+	// 			width: 5vw;			
+	// 		}
+	// }
+
+	// @media (max-width: 450px) {
+	// 	.player-wrapper {
+	// 		width: 220%;
+	// 		height: 210%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 8.5px;
+	// 			right: 213px;
+	// 	}
+	// }
+
+
+	
+
+	// @media (max-width: 430px) {
+
+	// 	.player-wrapper {
+	// 		width: 235%;
+	// 		height: 210%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 10px;
+	// 			right: 190px;
+	// 	}
+	// }
+
+	// @media (max-width: 390px) {
+
+	// 	.player-wrapper {
+	// 		width: 260%;
+	// 		height: 210%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 10px;
+	// 			right: 195px;
+	// 	}
+	// }
+
+
+	// @media (max-width: 376px) {
+	// 	.player-wrapper {
+	// 		width: 270%;
+	// 		height: 240%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 10px;
+	// 			right: 195px;
+	// 	}
+
+	// 	.movie-stats {
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 24px;
+	// 			padding: 10px;
+	// 			top: -17.9px;
+	// 	}
+	// }
+	
+	// @media (max-width: 370px) {
+	// .player-wrapper {
+	// 			width: 270%;
+	// 			height: 240%;
+	// 			position: absolute;
+	// 				position: relative;
+	// 				bottom: 13px;
+	// 				right: 190px;
+	// 		}
+
+	// 		.movie-stats {
+	// 			position: absolute;
+	// 				position: relative;
+	// 				right: 24px;
+	// 				padding: 10px;
+	// 				top: -18.5px;
+	// 		}
+
+	// 	}
+
+	// @media (max-width: 360px) {
+
+	// 	.player-wrapper {
+	// 		width: 270%;
+	// 		height: 240%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 12px;
+	// 			right: 183px;
+	// 	}
+	// }
+
+	// @media (max-width: 341px) {
+
+	// 	.player-wrapper {
+	// 		width: 270%;
+	// 		height: 240%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 8px;
+	// 			right: 175px;
+	// 	}
+	// }
+
+	// @media (max-width: 327px) {
+
+	// 	.player-wrapper {
+	// 		width: 280%;
+	// 		height: 240%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			bottom: 8px;
+	// 			right: 165px;
+	// 	}
+	// }
+
+
+	// @media (max-width: 320px) {
+
+	// 	.player-wrapper {
+	// 		width: 285%;
+	// 		position: absolute;
+	// 			position: relative;
+	// 			right: 161px;
+	// 	}
+
+	// 	@media (max-width: 315px) {
+
+	// 		.player-wrapper {
+	// 			width: 296%;
+	// 			position: absolute;
+	// 				position: relative;
+	// 				right: 167px;
+	// 		}
+
+	// 		@media (max-width: 303px) {
+
+	// 			.player-wrapper {
+	// 				width: 305%;
+	// 				position: absolute;
+	// 					position: relative;
+	// 					right: 164px;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 
