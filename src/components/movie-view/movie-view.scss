@@ -148,7 +148,7 @@
 	}
 	}
 
-	@media (min-width: 575px) {
+	@media (min-width: 575px) and (max-width: 575px) {
 
 		#movie-image {
 			display: none;
@@ -160,7 +160,7 @@
 		position: absolute;
 		position: relative;
 		bottom: 15px;
-		right: 200px;
+		right: 250px;
 	}
 
 	#movie-content {
@@ -190,7 +190,7 @@
 				}
 	}
 
-	@media (min-width: 520px) {
+	@media (min-width: 484px) and (max-width: 520px) {
 
 		#movie-view-section-top {
 			padding: 40px;
@@ -221,7 +221,7 @@
 }	
 	}
 
-	@media (min-width: 485px) {
+	@media (min-width: 389px) and (max-width: 485px) {
 
 		#movie-view-section-top {
 			padding: 40px;
@@ -251,7 +251,7 @@
 		}
 	}
 
-	@media (min-width: 440px) {
+	@media (min-width: 390px) and (max-width: 440px) {
 
 		.player-wrapper {
 			width: 230%;
@@ -263,7 +263,7 @@
 		}
 	}
 
-	@media (min-width: 390px) {
+	@media (min-width: 364px) and (max-width: 390px) {
 
 		.player-wrapper {
 			width: 265%;
@@ -294,7 +294,7 @@
 		}
 	}
 
-	@media (min-width: 364px){
+	@media (min-width: 339px) and (max-width: 364px) {
 
 		.player-wrapper {
 			width: 265%;
@@ -325,7 +325,7 @@
 		}
 	}
 
-	@media (min-width: 340px) {
+	@media (min-width: 319px) and (max-width: 340px) {
 
 		.player-wrapper {
 			width: 280%;
@@ -357,7 +357,7 @@
 	}
 	
 
-	@media (min-width: 320px){
+	@media (min-width: 309px) and (max-width: 320px) {
 
 		.title-style {
 			position: absolute;
@@ -403,7 +403,7 @@
 					}
 	}
 
-	@media (min-width: 310px) {
+	@media (min-width: 302px) and (max-width: 310px) {
 
 		.player-wrapper {
 			width: 280%;
