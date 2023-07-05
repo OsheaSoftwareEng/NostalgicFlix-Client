@@ -30,31 +30,6 @@
     display: none;
   }
 
-  .left-arrow {
-    color: white;
-    background-color: rgba(0,0,0,.3);
-    position: absolute;
-    top: 23%;
-    left: 320px;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-
-  }
-
-  .right-arrow {
-    color:white;
-    background-color: rgba(0,0,0,.3);
-    position: absolute;
-    top: 23%;
-    right: 298px;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none
-  }
-
-  @media (max-width: 1669px) {
-
 
   .left-arrow {
     display: none;
@@ -65,6 +40,34 @@
     position: absolute;
     display: none;
   }
+
+  @media (min-width: 1669px) {
+    .left-arrow {
+      display: block;
+      color: white;
+      background-color: rgba(0,0,0,.3);
+      position: absolute;
+      top: 23%;
+      left: 320px;
+      z-index: 10;
+      cursor: pointer;
+      user-select: none;
+  
+    }
+  
+    .right-arrow {
+      display: block;
+      color:white;
+      background-color: rgba(0,0,0,.3);
+      position: absolute;
+      top: 23%;
+      right: 298px;
+      z-index: 10;
+      cursor: pointer;
+      user-select: none
+    }
+
+  
 }
 
 #container-max {
