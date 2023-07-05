@@ -148,7 +148,7 @@
 	}
 	}
 
-	@media (max-width: 575px) {
+	@media (min-width: 521px) and (max-width: 575px) {
 
 		#movie-image {
 			display: none;
@@ -190,7 +190,18 @@
 				}
 	}
 
-	@media (max-width: 520px) {
+	@media (min-width: 484px) and (max-width: 520px) {
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 40px;
+		}
 
 		.player-wrapper {
 			width: 210%;
@@ -202,19 +213,37 @@
 		}
 	}
 
-	@media (max-width: 485px) {
+	@media (min-width: 389px) and (max-width: 485px) {
 
-		.player-wrapper {
-			width: 210%;
-			height: 180%;
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
 			position: absolute;
 			position: relative;
-			bottom: 5px;
-			right: 215px;
+			bottom: 16px;
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 40px;
+		}
+
+		.player-wrapper {
+			width: 240%;
+			height: 195%;
+			position: absolute;
+			position: relative;
+			bottom: 10px;
+			right: 240px;
 		}
 	}
 
-	@media (max-width: 440px) {
+	@media (min-width: 390px) and (max-width: 440px) {
 
 		.player-wrapper {
 			width: 230%;
@@ -226,99 +255,252 @@
 		}
 	}
 
-	@media (max-width: 390px) {
-
-		.player-wrapper {
-			width: 230%;
-			height: 230%;
-			position: absolute;
-			position: relative;
-			bottom: 12px;
-			right: 175px;
-		}
-	}
-
-	@media (max-width: 364px) {
+	@media (min-width: 364px) and (max-width: 390px) {
 
 		.player-wrapper {
 			width: 265%;
-			height: 230%;
+			height: 215%;
 			position: absolute;
 			position: relative;
-			bottom: 12px;
-			right: 180px;
+			bottom: 10px;
+			right: 220px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
 		}
 	}
 
-	@media (max-width: 340px) {
+	@media (min-width: 339px) and (max-width: 364px) {
+
+		.player-wrapper {
+			width: 265%;
+			height: 215%;
+			position: absolute;
+			position: relative;
+			bottom: 10px;
+			right: 200px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
+		}
+	}
+
+	@media (min-width: 319px) and (max-width: 340px) {
 
 		.player-wrapper {
 			width: 280%;
 			height: 230%;
 			position: absolute;
 			position: relative;
-			bottom: 12px;
-			right: 175px;
+			bottom: 05px;
+			right: 190px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
+		}
+	}
+	
+
+	@media (min-width: 309px) and (max-width: 320px) {
+
+		.player-wrapper {
+			width: 280%;
+			height: 230%;
+			position: absolute;
+			position: relative;
+			bottom: 05px;
+			right: 190px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
 		}
 	}
 
-	@media (max-width: 320px) {
+	@media (min-width: 302px) and (max-width: 310px) {
 
 		.player-wrapper {
-			width: 290%;
-			height: 250%;
+			width: 280%;
+			height: 230%;
 			position: absolute;
 			position: relative;
-			bottom: 5px;
-			right: 166px;
+			bottom: 05px;
+			right: 170px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
 		}
 	}
 
-	@media (max-width: 310px) {
+	@media (min-width: 296px) and (max-width: 303px) {
 
 		.player-wrapper {
-			width: 300%;
-			height: 255%;
+			width: 280%;
+			height: 230%;
 			position: absolute;
 			position: relative;
-			bottom: 5px;
-			right: 166px;
+			bottom: 05px;
+			right: 170px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
 		}
 	}
 
-	@media (max-width: 303px) {
+	@media (min-width: 287px) and (max-width: 297px) {
 
 		.player-wrapper {
-			width: 310%;
-			height: 260%;
+			width: 280%;
+			height: 230%;
 			position: absolute;
 			position: relative;
-			bottom: 5px;
-			right: 166px;
+			bottom: 05px;
+			right: 165px;
+		}
+
+		#movie-view-section-top {
+			padding: 40px;
+
+		}
+
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
 		}
 	}
 
-	@media (max-width: 297px) {
+	@media (min-width: 250px) and (max-width: 288px) {
 
 		.player-wrapper {
-			width: 325%;
-			height: 275%;
+			width: 333%;
+			height: 270%;
 			position: absolute;
 			position: relative;
-			bottom: 8px;
-			right: 166px;
+			bottom: 7px;
+			right: 180px;
 		}
-	}
 
-	@media (max-width: 288px) {
+		#movie-view-section-top {
+			padding: 40px;
 
-		.player-wrapper {
-			width: 330%;
-			height: 285%;
+		}
+
+		#movie-content {
 			position: absolute;
 			position: relative;
-			bottom: 8px;
-			right: 166px;
+			bottom: 35px;
+			left: 18px;
+		}
+
+		.movie-stats {
+			font-size: 0.8em;
+			position: absolute;
+			position: relative;
+			bottom: 16px;
 		}
 	}
 
