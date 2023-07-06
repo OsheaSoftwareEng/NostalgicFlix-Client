@@ -5,16 +5,17 @@
 	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
 	width: 100%;
 	height: 100%;
-	
  	 }
 
-	//   #col-remove {
-	// 	flex: none;
-	// }
+	  #movie-image {
+		display: block;
+	position: relative;
+	top: 35px;
+	width: 100%;
+	height: 100%;
+}
 
-	// .col {
-	// 	flex: none;
-	// }
+
 
   #container {
 	max-width: none;
@@ -145,24 +146,19 @@
 
 	// //media queries for all screen size responsiveness
 
-	@media (min-width: 576px) {
-
-		
-
-		#movie-image {
-			display: block;
-		position: relative;
-		top: 35px;
-		width: 100%;
-		height: 100%;
-	}
-	}
-
 	@media (min-width: 521px) and (max-width: 575px) {
 
 		#movie-image {
 			display: none;
 		}
+
+		#col-remove {
+				flex: none;
+			}
+		
+			.col {
+				flex: none;
+			}
 
 	.player-wrapper {
 		width: 210%;
