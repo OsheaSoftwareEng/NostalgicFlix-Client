@@ -123,32 +123,34 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
       <Container id='container' className='p-0 m-0'>
         <Container fluid id='movie-view-section-top'>
           <div id='movie-content'>
-            <Row>
-              <Col className='col-md-9 p-0 d-flex margin-style'>
-                <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
-                {Favorite ? (
-                  <BsBookmarkPlusFill
-                    className='full-bookmark move-bookmark-mv'
-                    color='#ff6b81'
-                    size
-                    onClick={removeFavorite}
-                  />
-                ) : (
-                  <BsBookmarkPlus
-                    className='outline-bookmark move-bookmark-mv'
-                    size
-                    onClick={addFavorite}
-                  />
-                )}
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <span className='movie-stats font-style'>
-                  {Movie.ReleaseDate} · {Movie.Rating} · {Movie.MovieLength}
-                </span>
-              </Col>
-            </Row>
+            <div className='movie-details'>
+              <Row>
+                <Col className='col-md-9 p-0 d-flex margin-style'>
+                  <h1 className='title-style font-style-bold'>{Movie.Title}</h1>
+                  {Favorite ? (
+                    <BsBookmarkPlusFill
+                      className='full-bookmark move-bookmark-mv'
+                      color='#ff6b81'
+                      size
+                      onClick={removeFavorite}
+                    />
+                  ) : (
+                    <BsBookmarkPlus
+                      className='outline-bookmark move-bookmark-mv'
+                      size
+                      onClick={addFavorite}
+                    />
+                  )}
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <span className='movie-stats font-style'>
+                    {Movie.ReleaseDate} · {Movie.Rating} · {Movie.MovieLength}
+                  </span>
+                </Col>
+              </Row>
+            </div>
             <Row>
               <Col id='col-remove' fluid className='col-xs-7 col-sm-3 col-md-3'>
                 <div className='col-xs-5'>

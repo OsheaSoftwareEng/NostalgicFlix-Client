@@ -163,18 +163,24 @@
 		}
 
 	.player-wrapper {
-		width: 210%;
-		height: 180%;
+		width: 120%;
+		height: 120%;
 		position: absolute;
 		position: relative;
-		bottom: 15px;
-		right: 250px;
+		bottom: -30px;
+		right: 50px;
 	}
 
 	#movie-content {
 		position: absolute;
 		position: relative;
 		bottom: 40px;
+	}
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 20px;
 	}
 
 	#movie-view-section-top {
@@ -218,20 +224,26 @@
 			flex: none;
 			}
 
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
-
-		.player-wrapper {
-			width: 210%;
-			height: 180%;
-			position: absolute;
-			position: relative;
-			bottom: 5px;
-			right: 235px;
-		}
+			.player-wrapper {
+				width: 120%;
+				height: 120%;
+				position: absolute;
+				position: relative;
+				bottom: -30px;
+				right: 38px;
+			}
+		
+			#movie-content {
+				position: absolute;
+				position: relative;
+				bottom: 40px;
+			}
+		
+			.movie-details {
+				position: absolute;
+				position: relative;
+				top: 20px;
+			}
 
 		.movie-stats {
 			font-size: 9px;
@@ -267,31 +279,49 @@
 			top: -1px;
 	}
 
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
+	.player-wrapper {
+		width: 120%;
+		height: 120%;
+		position: absolute;
+		position: relative;
+		bottom: -30px;
+		right: 40px;
+	}
 
-		.player-wrapper {
-			width: 240%;
-			height: 195%;
-			position: absolute;
-			position: relative;
-			bottom: 10px;
-			right: 240px;
-		}
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 40px;
+	}
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 20px;
+	}
 	}
 
 	@media (min-width: 390px) and (max-width: 440px) {
 
 		.player-wrapper {
-			width: 230%;
-			height: 205%;
+			width: 120%;
+			height: 120%;
 			position: absolute;
 			position: relative;
-			bottom: 10px;
-			right: 200px;
+			bottom: -30px;
+			right: 35px;
+		}
+	
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 40px;
+		}
+	
+		.movie-details {
+			position: absolute;
+			position: relative;
+			top: 20px;
 		}
 	}
 
@@ -302,12 +332,24 @@
 	@media (min-width: 364px) and (max-width: 390px) {
 
 		.player-wrapper {
-			width: 265%;
-			height: 215%;
+			width: 120%;
+			height: 120%;
 			position: absolute;
 			position: relative;
-			bottom: 10px;
-			right: 220px;
+			bottom: -30px;
+			right: 30px;
+		}
+	
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 40px;
+		}
+	
+		.movie-details {
+			position: absolute;
+			position: relative;
+			top: 20px;
 		}
 
 		#movie-view-section-top {
@@ -315,12 +357,6 @@
 
 		}
 
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 35px;
-			left: 18px;
-		}
 
 		.movie-stats {
 			font-size: 0.8em;
@@ -337,12 +373,24 @@
 	@media (min-width: 339px) and (max-width: 364px) {
 
 		.player-wrapper {
-			width: 265%;
-			height: 215%;
+			width: 120%;
+			height: 120%;
 			position: absolute;
 			position: relative;
-			bottom: 10px;
-			right: 200px;
+			bottom: -30px;
+			right: 30px;
+		}
+	
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 40px;
+		}
+	
+		.movie-details {
+			position: absolute;
+			position: relative;
+			top: 20px;
 		}
 
 		#movie-view-section-top {
@@ -350,12 +398,6 @@
 
 		}
 
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 35px;
-			left: 18px;
-		}
 
 		.movie-stats {
 			font-size: 0.8em;
@@ -372,12 +414,24 @@
 	@media (min-width: 319px) and (max-width: 340px) {
 
 		.player-wrapper {
-			width: 280%;
-			height: 230%;
+			width: 120%;
+			height: 120%;
 			position: absolute;
 			position: relative;
-			bottom: 05px;
-			right: 190px;
+			bottom: -30px;
+			right: 30px;
+		}
+	
+		#movie-content {
+			position: absolute;
+			position: relative;
+			bottom: 40px;
+		}
+	
+		.movie-details {
+			position: absolute;
+			position: relative;
+			top: 20px;
 		}
 
 		#movie-view-section-top {
@@ -385,12 +439,6 @@
 
 		}
 
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 35px;
-			left: 18px;
-		}
 
 		.movie-stats {
 			font-size: 0.8em;
@@ -414,12 +462,19 @@
 		}
 
 		.player-wrapper {
-			width: 290%;
-			height: 240%;
+			width: 130%;
+			height: 120%;
 			position: absolute;
 			position: relative;
-			bottom: 10px;
-			right: 180px;
+			bottom: -30px;
+			right: 54px;
+		}
+	
+	
+		.movie-details {
+			position: absolute;
+			position: relative;
+			top: 20px;
 		}
 
 		#movie-view-section-top {
