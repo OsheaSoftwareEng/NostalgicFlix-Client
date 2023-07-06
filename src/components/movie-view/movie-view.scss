@@ -158,6 +158,10 @@
 
 	@media (min-width: 521px) and (max-width: 575px) {
 
+		.title-style {
+			font-size: 4rem;
+		}
+
 		#movie-image {
 			display: none;
 		}
@@ -180,7 +184,8 @@
 	.movie-details {
 		position: absolute;
 		position: relative;
-		top: 20px;
+		top: 30px;
+		right: 30px;
 	}
 
 	#movie-view-section-top {
@@ -194,17 +199,17 @@
 
 
 			.movie-stats {
-						font-size: 8px;
+						font-size: 12px;
 				position: absolute;
 				position: relative;
 				// right: 55px;
-				top: -24px;
+				top: -21px;
 			}	
 
 				.move-bookmark-mv {
 						position: absolute;
 						position: relative;
-						width: 5vw;
+						width: 10vw;
 						top: -1px;
 				}
 
@@ -215,10 +220,36 @@
 
 	@media (min-width: 484px) and (max-width: 520px) {
 
+		.title-style {
+			font-size: 3.5rem;
+		}
+
+			.movie-stats {
+				font-size: 12px;
+		position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -21px;
+	}	
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 27px;
+		right: 30px;
+	}
+
 		#movie-view-section-top {
 			padding: 40px;
 
 		}
+
+		.move-bookmark-mv {
+			position: absolute;
+			position: relative;
+			width: 10vw;
+			top: -1px;
+	}
 
 		#col-remove {
 			flex: none;
@@ -236,25 +267,45 @@
 			#movie-content {
 				position: absolute;
 				position: relative;
-				bottom: 40px;
-			}
-		
-			.movie-details {
-				position: absolute;
-				position: relative;
-				top: 20px;
+				bottom: 25px;
 			}
 
-		.movie-stats {
-			font-size: 9px;
-	position: absolute;
-	position: relative;
-	// right: 55px;
-	top: -20px;
-}	
+		
 	}
 
 	@media (min-width: 389px) and (max-width: 485px) {
+
+		.title-style {
+			font-size: 3.5rem;
+		}
+
+			.movie-stats {
+				font-size: 12.5px;
+		position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -21px;
+	}	
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 27px;
+		right: 30px;
+	}
+
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		width: 10vw;
+		top: -1px;
+	}
 
 		#movie-view-section-top {
 			padding: 40px;
@@ -264,20 +315,6 @@
 		#col-remove {
 			flex: none;
 			}
-
-		.movie-stats {
-			font-size: 0.6em;
-			position: absolute;
-			position: relative;
-			bottom: 16px;
-		}
-
-		.move-bookmark-mv {
-			position: absolute;
-			position: relative;
-			width: 5vw;
-			top: -1px;
-	}
 
 	.player-wrapper {
 		width: 120%;
@@ -288,20 +325,42 @@
 		right: 40px;
 	}
 
-	#movie-content {
+
+	}
+
+	@media (min-width: 390px) and (max-width: 440px) {
+
+		.title-style {
+			font-size: 3.5rem;
+		}
+
+			.movie-stats {
+				font-size: 12.5px;
 		position: absolute;
 		position: relative;
-		bottom: 40px;
-	}
+		// right: 55px;
+		top: -21px;
+	}	
 
 	.movie-details {
 		position: absolute;
 		position: relative;
-		top: 20px;
-	}
+		top: 27px;
+		right: 30px;
 	}
 
-	@media (min-width: 390px) and (max-width: 440px) {
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		width: 10vw;
+		top: -1px;
+	}
 
 		.player-wrapper {
 			width: 120%;
@@ -311,18 +370,6 @@
 			bottom: -30px;
 			right: 35px;
 		}
-	
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
-	
-		.movie-details {
-			position: absolute;
-			position: relative;
-			top: 20px;
-		}
 	}
 
 	#col-remove {
@@ -330,6 +377,38 @@
 		}
 
 	@media (min-width: 364px) and (max-width: 390px) {
+
+		.title-style {
+			font-size: 3.3rem;
+		}
+
+			.movie-stats {
+				font-size: 12.5px;
+		position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -21px;
+	}	
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 27px;
+		right: 30px;
+	}
+
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		width: 10vw;
+		top: -1px;
+	}
 
 		.player-wrapper {
 			width: 120%;
@@ -340,29 +419,8 @@
 			right: 30px;
 		}
 	
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
-	
-		.movie-details {
-			position: absolute;
-			position: relative;
-			top: 20px;
-		}
-
 		#movie-view-section-top {
 			padding: 40px;
-
-		}
-
-
-		.movie-stats {
-			font-size: 0.8em;
-			position: absolute;
-			position: relative;
-			bottom: 16px;
 		}
 
 		#col-remove {
@@ -372,6 +430,39 @@
 
 	@media (min-width: 339px) and (max-width: 364px) {
 
+		.title-style {
+			font-size: 3rem;
+		}
+
+			.movie-stats {
+				font-size: 12.5px;
+		position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -21px;
+	}	
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 20px;
+		right: 30px;
+		transform: translate(0, 13px);
+	}
+
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		width: 10vw;
+		top: -1px;
+	}
+
 		.player-wrapper {
 			width: 120%;
 			height: 120%;
@@ -381,11 +472,6 @@
 			right: 30px;
 		}
 	
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
 	
 		.movie-details {
 			position: absolute;
@@ -396,14 +482,6 @@
 		#movie-view-section-top {
 			padding: 40px;
 
-		}
-
-
-		.movie-stats {
-			font-size: 0.8em;
-			position: absolute;
-			position: relative;
-			bottom: 16px;
 		}
 
 		#col-remove {
@@ -413,38 +491,52 @@
 
 	@media (min-width: 319px) and (max-width: 340px) {
 
+
+		.title-style {
+			font-size: 2.5rem;
+		}
+
+			.movie-stats {
+				font-size: 12.5px;
+		position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -21px;
+	}	
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 20px;
+		right: 30px;
+		transform: translate(0, 13px);
+	}
+
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		width: 10vw;
+		top: -1px;
+	}
+
 		.player-wrapper {
-			width: 120%;
+			width: 130%;
 			height: 120%;
 			position: absolute;
 			position: relative;
 			bottom: -30px;
-			right: 30px;
+			right: 37px;
 		}
 	
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 40px;
-		}
-	
-		.movie-details {
-			position: absolute;
-			position: relative;
-			top: 20px;
-		}
-
 		#movie-view-section-top {
 			padding: 40px;
 
-		}
-
-
-		.movie-stats {
-			font-size: 0.8em;
-			position: absolute;
-			position: relative;
-			bottom: 16px;
 		}
 
 		#col-remove {
@@ -456,10 +548,37 @@
 	@media (min-width: 309px) and (max-width: 320px) {
 
 		.title-style {
-			position: absolute;
-			position: relative;
-			right: 53px;
+			font-size: 2.5rem;
 		}
+
+			.movie-stats {
+				font-size: 12.5px;
+		position: absolute;
+		position: relative;
+		// right: 55px;
+		top: -21px;
+	}	
+
+	.movie-details {
+		position: absolute;
+		position: relative;
+		top: 20px;
+		right: 30px;
+		transform: translate(0, 13px);
+	}
+
+	#movie-content {
+		position: absolute;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.move-bookmark-mv {
+		position: absolute;
+		position: relative;
+		width: 10vw;
+		top: -1px;
+	}
 
 		.player-wrapper {
 			width: 130%;
@@ -467,47 +586,13 @@
 			position: absolute;
 			position: relative;
 			bottom: -30px;
-			right: 54px;
+			right: 33px;
 		}
 	
-	
-		.movie-details {
-			position: absolute;
-			position: relative;
-			top: 20px;
-		}
-
 		#movie-view-section-top {
 			padding: 40px;
 
 		}
-
-		#movie-content {
-			position: absolute;
-			position: relative;
-			bottom: 35px;
-			left: 18px;
-		}
-
-		.movie-stats {
-			font-size: 0.5em;
-			position: absolute;
-			position: relative;
-			bottom: 16px;
-			right: 60px;
-		}
-
-		.move-bookmark-mv {
-					position: absolute;
-						position: relative;
-						right: 50px;
-						top: -4px;
-						width: 5.8vw;			
-					}
-
-					// #col-remove {
-					// 	flex: none;
-					// 	}
 	}
 
 	@media (min-width: 302px) and (max-width: 310px) {
