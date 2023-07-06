@@ -186,6 +186,12 @@
 		bottom: 40px;
 	}
 
+	#react-move {
+		position: relative;
+		bottom: 11%;
+		left: -110%;
+	}
+
 	#movie-view-section-top {
 				padding: 40px;
 	
@@ -212,6 +218,12 @@
 		#movie-view-section-top {
 			padding: 40px;
 
+		}
+
+		#react-move {
+			position: relative;
+			bottom: 5%;
+			left: -110%;
 		}
 
 		#movie-content {
@@ -243,6 +255,12 @@
 		#movie-view-section-top {
 			padding: 40px;
 
+		}
+
+		#react-move {
+			position: relative;
+			bottom: 5%;
+			left: -125%;
 		}
 
 		.movie-stats {
