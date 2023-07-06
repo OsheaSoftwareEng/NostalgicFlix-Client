@@ -150,7 +150,7 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
               </Col>
             </Row>
             <Row>
-              <Col id='col-remove' fluid className='col-xs-7 col-sm-3 col-md-3'>
+              <Col fluid className='col-xs-7 col-sm-3 col-md-3'>
                 <div className='col-xs-5'>
                   <img id='movie-image' src={Movie.ImagePath} alt='' />
                 </div>
