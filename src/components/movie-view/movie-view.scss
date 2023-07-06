@@ -5,15 +5,8 @@
 	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
 	width: 100%;
 	height: 100%;
+	
  	 }
-
-	 #react-move {
-		position: absolute;
-		position: relative;
-		left: 60%;
-		bottom: 85%;
-	 }
-	 
 
   #container {
 	max-width: none;
@@ -26,11 +19,6 @@
 		width: auto;
 		height: auto;
 		}
-
-			//css for movie case poster
-	#movie-image {
-		display: none;
-	}
 
 
   //users favorites bookmark css
@@ -117,7 +105,10 @@
 		margin-left: 50%;
 	}
 
-
+	//css for movie case poster
+	#movie-image {
+		display: none;
+	}
 
 	//css for release date, rating, and movie length
 	.movie-stats {
@@ -157,10 +148,10 @@
 		}
 
 		#movie-image {
-			display: inline;
+			display: block;
 		position: relative;
 		top: 35px;
-		width: 25%;
+		width: 100%;
 		height: 100%;
 	}
 	}
@@ -184,12 +175,6 @@
 		position: absolute;
 		position: relative;
 		bottom: 40px;
-	}
-
-	#react-move {
-		position: relative;
-		bottom: 11%;
-		left: -110%;
 	}
 
 	#movie-view-section-top {
@@ -218,12 +203,6 @@
 		#movie-view-section-top {
 			padding: 40px;
 
-		}
-
-		#react-move {
-			position: relative;
-			bottom: 5%;
-			left: -110%;
 		}
 
 		#movie-content {
@@ -255,12 +234,6 @@
 		#movie-view-section-top {
 			padding: 40px;
 
-		}
-
-		#react-move {
-			position: relative;
-			bottom: 5%;
-			left: -125%;
 		}
 
 		.movie-stats {
@@ -306,18 +279,12 @@
 			position: absolute;
 			position: relative;
 			bottom: 10px;
-			right: 280px;
+			right: 220px;
 		}
 
 		#movie-view-section-top {
 			padding: 40px;
 
-		}
-
-		#react-move {
-			position: relative;
-			bottom: 11%;
-			left: -152%;
 		}
 
 		#movie-content {
@@ -351,12 +318,6 @@
 
 		}
 
-		#react-move {
-			position: relative;
-			bottom: 11%;
-			left: -152%;
-		}
-
 		#movie-content {
 			position: absolute;
 			position: relative;
@@ -381,12 +342,6 @@
 			position: relative;
 			bottom: 05px;
 			right: 190px;
-		}
-
-		#react-move {
-			position: relative;
-			bottom: 11%;
-			left: -165%;
 		}
 
 		#movie-view-section-top {
@@ -425,12 +380,6 @@
 			position: relative;
 			bottom: 10px;
 			right: 180px;
-		}
-
-		#react-move {
-			position: relative;
-			bottom: 11%;
-			left: -173%;
 		}
 
 		#movie-view-section-top {
