@@ -139,9 +139,8 @@
 
 	@media (min-width: 576px) {
 
-		#be-gone {
-			padding: 0;
-			width: 0px;
+		#col-remove {
+			flex: none;
 		}
 
 		#movie-image {
