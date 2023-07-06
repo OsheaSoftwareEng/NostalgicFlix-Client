@@ -8,6 +8,14 @@
 	
  	 }
 
+	  #col-remove {
+		flex: none;
+	}
+
+	.col {
+		flex: none;
+	}
+
   #container {
 	max-width: none;
   	}
@@ -139,13 +147,7 @@
 
 	@media (min-width: 576px) {
 
-		#col-remove {
-			flex: none;
-		}
-
-		.col {
-			flex: none;
-		}
+		
 
 		#movie-image {
 			display: block;
