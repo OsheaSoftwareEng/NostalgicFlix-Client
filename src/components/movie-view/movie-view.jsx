@@ -150,24 +150,26 @@ export const MovieView = ({ movieInfo, movie, token, user, updatedUser }) => {
               </Col>
             </Row>
             <Row>
-              <Col id='col-remove'>
-                <div className='col-xs-5'>
-                  <img id='movie-image' src={Movie.ImagePath} alt='' />
-                </div>
-              </Col>
-              <Col>
-                <div id='react-move' className='player-wrapper'>
-                  <ReactPlayer
-                    className='react-player'
-                    url={Movie.MovieEmbed}
-                    playing={true}
-                    volume={0}
-                    controls={true}
-                    width='100%'
-                    height='100%'
-                  />
-                </div>
-              </Col>
+              <div className='d-flex'>
+                <Col id='col-remove'>
+                  <div className='col-xs-5'>
+                    <img id='movie-image' src={Movie.ImagePath} alt='' />
+                  </div>
+                </Col>
+                <Col>
+                  <div id='react-move' className='player-wrapper'>
+                    <ReactPlayer
+                      className='react-player'
+                      url={Movie.MovieEmbed}
+                      playing={true}
+                      volume={0}
+                      controls={true}
+                      width='100%'
+                      height='100%'
+                    />
+                  </div>
+                </Col>
+              </div>
             </Row>
           </div>
         </Container>
