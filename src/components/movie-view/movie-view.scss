@@ -214,6 +214,10 @@
 
 		}
 
+		#col-remove {
+			flex: none;
+			}
+
 		#movie-content {
 			position: absolute;
 			position: relative;
@@ -244,6 +248,10 @@
 			padding: 40px;
 
 		}
+
+		#col-remove {
+			flex: none;
+			}
 
 		.movie-stats {
 			font-size: 0.6em;
@@ -287,6 +295,10 @@
 		}
 	}
 
+	#col-remove {
+		flex: none;
+		}
+
 	@media (min-width: 364px) and (max-width: 390px) {
 
 		.player-wrapper {
@@ -316,6 +328,10 @@
 			position: relative;
 			bottom: 16px;
 		}
+
+		#col-remove {
+			flex: none;
+			}
 	}
 
 	@media (min-width: 339px) and (max-width: 364px) {
@@ -347,6 +363,10 @@
 			position: relative;
 			bottom: 16px;
 		}
+
+		#col-remove {
+			flex: none;
+			}
 	}
 
 	@media (min-width: 319px) and (max-width: 340px) {
@@ -378,6 +398,10 @@
 			position: relative;
 			bottom: 16px;
 		}
+
+		#col-remove {
+			flex: none;
+			}
 	}
 	
 
@@ -425,6 +449,10 @@
 						top: -4px;
 						width: 5.8vw;			
 					}
+
+					#col-remove {
+						flex: none;
+						}
 	}
 
 	@media (min-width: 302px) and (max-width: 310px) {
@@ -456,6 +484,10 @@
 			position: relative;
 			bottom: 16px;
 		}
+
+		#col-remove {
+			flex: none;
+			}
 	}
 
 	@media (min-width: 296px) and (max-width: 303px) {
