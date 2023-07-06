@@ -276,7 +276,7 @@
 	@media (min-width: 389px) and (max-width: 485px) {
 
 		.title-style {
-			font-size: 3.5rem;
+			font-size: 2rem;
 		}
 
 			.movie-stats {
@@ -284,7 +284,7 @@
 		position: absolute;
 		position: relative;
 		// right: 55px;
-		top: -21px;
+		top: -18px;
 	}	
 
 	.movie-details {
@@ -331,7 +331,7 @@
 	@media (min-width: 390px) and (max-width: 440px) {
 
 		.title-style {
-			font-size: 3.5rem;
+			font-size: 1.7rem;
 		}
 
 			.movie-stats {
@@ -339,20 +339,20 @@
 		position: absolute;
 		position: relative;
 		// right: 55px;
-		top: -21px;
+		top: -14px;
 	}	
 
 	.movie-details {
 		position: absolute;
 		position: relative;
-		top: 27px;
+		top: 17px;
 		right: 30px;
 	}
 
 	#movie-content {
 		position: absolute;
 		position: relative;
-		bottom: 25px;
+		bottom: 20px;
 	}
 
 	.move-bookmark-mv {
@@ -379,21 +379,21 @@
 	@media (min-width: 364px) and (max-width: 390px) {
 
 		.title-style {
-			font-size: 3.3rem;
+			font-size: 1.5rem;
 		}
 
 			.movie-stats {
-				font-size: 12.5px;
+				font-size: 10px;
 		position: absolute;
 		position: relative;
 		// right: 55px;
-		top: -21px;
+		top: -14px;
 	}	
 
 	.movie-details {
 		position: absolute;
 		position: relative;
-		top: 27px;
+		top: 15px;
 		right: 30px;
 	}
 
@@ -431,15 +431,15 @@
 	@media (min-width: 339px) and (max-width: 364px) {
 
 		.title-style {
-			font-size: 3rem;
+			font-size: 1.4rem;
 		}
 
 			.movie-stats {
-				font-size: 12.5px;
+				font-size: 10px;
 		position: absolute;
 		position: relative;
 		// right: 55px;
-		top: -21px;
+		top: -14px;
 	}	
 
 	.movie-details {
@@ -447,7 +447,6 @@
 		position: relative;
 		top: 20px;
 		right: 30px;
-		transform: translate(0, 13px);
 	}
 
 	#movie-content {
@@ -493,21 +492,21 @@
 
 
 		.title-style {
-			font-size: 2.5rem;
+			font-size: 1.3rem;
 		}
 
 			.movie-stats {
-				font-size: 12.5px;
+				font-size: 10px;
 		position: absolute;
 		position: relative;
 		// right: 55px;
-		top: -21px;
+		top: -14px;
 	}	
 
 	.movie-details {
 		position: absolute;
 		position: relative;
-		top: 20px;
+		top: 5px;
 		right: 30px;
 		transform: translate(0, 13px);
 	}
@@ -548,23 +547,23 @@
 	@media (min-width: 309px) and (max-width: 320px) {
 
 		.title-style {
-			font-size: 2.5rem;
+			font-size: 1.1rem;
 		}
 
 			.movie-stats {
-				font-size: 12.5px;
+				font-size: 10px;
 		position: absolute;
 		position: relative;
 		// right: 55px;
-		top: -21px;
+		top: -5px;
 	}	
 
 	.movie-details {
 		position: absolute;
 		position: relative;
-		top: 20px;
+		top: -1px;
 		right: 30px;
-		transform: translate(0, 13px);
+		// transform: translate(0, 13px);
 	}
 
 	#movie-content {
