@@ -1,11 +1,12 @@
 
+
 .login-backdrop {
-    background-image:linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.6)), url('../images/movie-poster-background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.6)), url('../images/movie-poster-background.jpg');
+    background-repeat: repeat;
+    background-size:contain;
     width: 100%;
     width: 100vw;
-    height: 1000px;
+    height: 100vh;
 }
 
 
@@ -108,14 +109,14 @@
 
 }
 
-@media (max-width: 575px) {
+@media (min-width: 575px) {
     .login-backdrop {
-        background-image:linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.6)), url('../images/movie-poster-background.jpg');
-        background-repeat: repeat;
-        background-size:contain;
+        background-image:linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.6)), url('../images/movie-poster-background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
         width: 100%;
         width: 100vw;
-        height: 100vh;
+        height: 1000px;
     }
 
 }
