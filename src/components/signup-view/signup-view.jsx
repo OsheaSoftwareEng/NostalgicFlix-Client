@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button, Container } from 'react-bootstrap';
 import './signup-view.scss';
@@ -11,12 +11,21 @@ import { FaBirthdayCake } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 //state declarations for username,password,email and birthday and setState to store values inputted
-export const SignupView = () => {
+export const SignupView = ({ user }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [controlPassword, setControlPassword] = useState('');
+
+  //adds backdrop for signup and removes once logged in
+  useEffect(() => {
+    if (!user) {
+      document.body.classList.add('login-backdrop');
+    } else {
+      document.body.classList.remove('login-backdrop');
+    }
+  });
 
   //allows users to signup for application
   const handleSubmit = (event) => {
@@ -63,9 +72,9 @@ export const SignupView = () => {
             icon: 'success',
             title: 'Signup successful please login'
           });
-          // setTimeout(function () {
-          //   window.location.replace('/login');
-          // }, 2000);
+          setTimeout(function () {
+            window.location.replace('/login');
+          }, 2000);
         } else {
           console.log(response.statusText);
           Toast.fire({
