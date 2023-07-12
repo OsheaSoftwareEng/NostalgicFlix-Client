@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
@@ -10,7 +10,16 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-export const LoginView = ({ onLoggedIn }) => {
+export const LoginView = ({ onLoggedIn, user, token }) => {
+  //adds backdrop for login view and gets rid of it once user logs in
+  useEffect(() => {
+    if (!user) {
+      document.body.classList.add('login-backdrop');
+    } else {
+      document.body.classList.remove('login-backdrop');
+    }
+  });
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -52,6 +61,7 @@ export const LoginView = ({ onLoggedIn }) => {
             icon: 'success',
             title: 'Signed in successfully'
           });
+          window.location.reload();
         } else {
           Toast.fire({
             icon: 'error',
