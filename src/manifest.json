@@ -15,7 +15,7 @@
 		"purpose": "any"
 	  },
 	  {
-		"src": "components/images/logox192x192.png",
+		"src": "components/images/nflogo192xx192.png",
 		"type": "image/png",
 		"sizes": "192x192",
 		"purpose": "maskable"
@@ -29,8 +29,8 @@
 	],
 	"start_url": "https://NostalgicFlix.com",
 	"display": "standalone",
-	"theme_color": "##051726",
-	"background_color": "#ffffff"
+	"theme_color": "#ff4500",
+	"background_color": "#000000"
 
 	
   }
