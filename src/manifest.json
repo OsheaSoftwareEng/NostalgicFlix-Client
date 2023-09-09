@@ -9,6 +9,12 @@
 		"purpose": "maskable"
 	  },
 	  {
+		"src": "components/images/NF96x96.png",
+		"sizes": "96x96",
+		"type": "image/x-icon",
+		"purpose": "maskable"
+	  },
+	  {
 		"src": "components/images/NF144x144.png",
 		"type": "image/png",
 		"sizes": "144x144",
