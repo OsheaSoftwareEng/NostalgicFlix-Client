@@ -15,7 +15,7 @@
 		"purpose": "any"
 	  },
 	  {
-		"src": "components/images/NF192xx192.png",
+		"src": "components/images/NF192x192.png",
 		"type": "image/png",
 		"sizes": "192x192",
 		"purpose": "maskable"
