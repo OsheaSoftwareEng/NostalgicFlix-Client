@@ -9,19 +9,19 @@
 		"purpose": "maskable"
 	  },
 	  {
-		"src": "components/images/logox144x144.png",
+		"src": "components/images/NF144x144.png",
 		"type": "image/png",
 		"sizes": "144x144",
 		"purpose": "any"
 	  },
 	  {
-		"src": "components/images/nflogo192xx192.png",
+		"src": "components/images/NF192xx192.png",
 		"type": "image/png",
 		"sizes": "192x192",
 		"purpose": "maskable"
 	  },
 	  {
-		"src": "components/images/logox512x512.png",
+		"src": "components/images/NF512x512.png",
 		"type": "image/png",
 		"sizes": "512x512",
 		"purpose": "maskable"
