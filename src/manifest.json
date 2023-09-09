@@ -1,0 +1,37 @@
+{
+	"short_name": "NostalgicFlix",
+	"name": "NostalgicFlix Good Memories Good Movies",
+	"icons": [
+	  {
+		"src": "components/images/favicon.png",
+		"sizes": "48x48",
+		"type": "image/x-icon",
+		"purpose": "maskable"
+	  },
+	  {
+		"src": "components/images/logox144x144.png",
+		"type": "image/png",
+		"sizes": "144x144",
+		"purpose": "any"
+	  },
+	  {
+		"src": "components/images/logox192x192.png",
+		"type": "image/png",
+		"sizes": "192x192",
+		"purpose": "maskable"
+	  },
+	  {
+		"src": "components/images/logox512x512.png",
+		"type": "image/png",
+		"sizes": "512x512",
+		"purpose": "maskable"
+	  }
+	],
+	"start_url": "https://NostalgicFlix.com",
+	"display": "standalone",
+	"theme_color": "##051726",
+	"background_color": "#ffffff"
+
+	
+  }
+  
