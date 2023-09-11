@@ -2,7 +2,7 @@
 
 **Link to project:** https://www.nostalgicflix.com <br>
 **Link to API:** https://github.com/OsheaSoftwareEng/NostalgicFlix-API <br>
-**Test Account:** Username: testcase <br>
+**Test Account:** Username: testuser12345 <br>
 Password: legend5000
 
 ![alt tag](https://imgur.com/HKGugG2.png)
