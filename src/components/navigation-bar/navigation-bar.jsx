@@ -42,9 +42,9 @@ export const NavigationBar = ({ user, setUser, setToken, movie }) => {
               >
                 WatchList
               </Nav.Link>
-              <Nav.Link className='nav-text font-style' href='/users'>
+              {/* <Nav.Link className='nav-text font-style' href='/users'>
                 Profile
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link
                 className='font-style'
                 href='#'
